@@ -9,7 +9,7 @@ const slides = [
         image: '/assest/idcsite.png', 
         title: 'IDC India',
         description: 'Experienced web developer specializing in IDC India 2nd Website. Committed to delivering innovative, responsive, and user-centered designs that enhance digital experiences and effectively showcase IDC’s services and initiatives.',
-        gradient: 'linear-gradient(135deg, #FFA500, #FF4500)', 
+        gradient: 'linear-gradient(135deg, #800080, #FF00FF)', 
         url: 'https://idc-india.vercel.app/' 
     },
     {
@@ -22,11 +22,11 @@ const slides = [
     },
     {
         id: 3,
-        image: '/assest/idcsite.png',
-        title: 'mAICourt',
+        image: '/assest/port.png',
+        title: 'Client Portfolio',
         description: 'Dedicated web developer of mAI Court, implementing cutting-edge AI technology for legal solutions. I create intuitive, efficient platforms that simplify legal processes while enhancing accessibility and user engagement',
-        gradient: 'linear-gradient(135deg, #800080, #FF00FF)',
-        url: 'https://mai-court.vercel.app/' 
+        gradient: 'linear-gradient(135deg, #FFA500, #FF4500)',
+        url: 'https://gulshanprofile.vercel.app/' 
     }
 ];
 
