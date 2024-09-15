@@ -1,39 +1,38 @@
 "use client";
-import Image from "next/image";
 import { useState, useEffect } from "react";
-
 
 export default function Header() {
   const [isAnimating, setIsAnimating] = useState(true);
   const [currentImage, setCurrentImage] = useState(0);
-  const [scrolled, setScrolled] = useState(false); // Add the scrolled state here
+  const [scrolled, setScrolled] = useState(false); 
 
   const images = [
     {
-      src: "/assest/dev1.png",
-      title: "Your Legal Companion ",
-      highlight: "Powered by AI",
+      src: "/assest/graph.jpg",
+      title: "Empowering Businesses Online ",
+      highlight: "Transforming Local Ideas into Global Success",
       description:
-        "Simplifying legal complexities with AI-powered solutions, providing personalized guidance and efficient support for your needs.",
+        "Our expert web development services help you bring your offline business into the digital world, unlocking new growth opportunities and expanding your reach beyond borders",
     },
     {
-      src: "/assest/dev2.png",
-      title: "Justice prevails through",
-      highlight: "righteousness alone.",
+      src: "/assest/tablet.png",
+      title: "Digital Evolution for Your Business",
+      highlight: "Grow Beyond Boundaries",
       description:
-        "Justice thrives when righteousness leads, ensuring fairness, truth, and integrity in every action, fostering a just society.",
+        "We specialize in creating tailored websites that drive growth for offline businesses, ensuring you thrive in the online market and achieve greater visibility, engagement, and sales.",
     },
     {
-      src: "/assest/dev3.png",
-      title: "।। धर्मेणैव जयते न्यायः।।",
+      src: "/assest/hand.png",
+      title: "From Offline to Online Success",
+      highlight: "Build, Expand, Thrive",
       description:
-        "Exploring new horizons through innovation and wisdom, committed to advancing knowledge with integrity and purpose for all.",
+        "Transform your business with a powerful online presence. Our web development solutions connect you to a wider audience, helping your business grow and succeed in today's digital economy.",
     },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50); // Use setScrolled here
+      setScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -42,12 +41,12 @@ export default function Header() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsAnimating(false); // Start fade out
+      setIsAnimating(false);
       setTimeout(() => {
-        setCurrentImage((prevImage) => (prevImage + 1) % images.length); // Change image
-        setIsAnimating(true); // Start fade-in
-      }, 500); // Fade-out duration
-    }, 5000); // Change image every 5 seconds
+        setCurrentImage((prevImage) => (prevImage + 1) % images.length);
+        setIsAnimating(true);
+      }, 500);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [images.length]);
@@ -66,24 +65,31 @@ export default function Header() {
           backgroundImage: `url(${images[currentImage].src})`,
         }}
       >
-        {/* Title and Description */}
-        {/* <div
-          className={`absolute left-10  mt-[11rem] lg:w-[40%] w-[60%] h-[17rem] inset-0 flex flex-col justify-center items-center text-center transition-all duration-1000 transform ${
-            isAnimating
-              ? "translate-x-0 opacity-100"
-              : "-translate-x-full opacity-0"
+        {/* Title, Description, and Buttons */}
+        <div
+          className={`absolute left-10 mt-[11rem] lg:w-[40%] w-[60%] h-[20rem] inset-0 flex flex-col justify-center items-center text-center transition-all duration-1000 transform ${
+            isAnimating ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
           }`}
-        > */}
-          {/* <h1 className="lg:text-5xl text-[2rem] font-bold mb-4 text-[#D8AC09]">
+        >
+          <h1 className="lg:text-[2rem] text-lg font-bold mb-4 bg-gradient-to-r from-[#f35d37] to-[#f83a00] bg-clip-text text-transparent">
             {images[currentImage].title}
           </h1>
-          <h2 className="lg:text-5xl text-[2rem] font-bold mb-4 text-[#414040]">
+          <h2 className="lg:text-3xl text-lg font-bold mb-4 text-[#b6b1b1]">
             {images[currentImage].highlight}
           </h2>
-          <p className="lg:text-xl text-lg font-semibold text-gray-700">
+          <p className="lg:text-lg text-lg text-left text-gray-100 mb-4">
             {images[currentImage].description}
-          </p> */}
-        {/* </div> */}
+          </p>
+          {/* Buttons */}
+          <div className="flex space-x-4">
+            <button className="px-6 py-2 bg-[#fa6a09] text-white font-semibold rounded-lg hover:bg-[#e7431a] transition-colors duration-300">
+              Explore More
+            </button>
+            <button className="px-6 py-2 bg-white text-[#fa6a09] font-semibold rounded-lg border-2 border-[#fa6a09] hover:bg-gray-100 transition-colors duration-300">
+              Book Demo
+            </button>
+          </div>
+        </div>
       </div>
     </header>
   );
