@@ -71,13 +71,13 @@ export default function Header() {
             isAnimating ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
           }`}
         >
-          <h1 className="lg:text-[2rem] text-lg font-bold mb-4 bg-gradient-to-r from-[#f35d37] to-[#f83a00] bg-clip-text text-transparent">
+          <h1 className="lg:text-[2rem] text-xl font-bold mb-4 bg-gradient-to-r from-[#f35d37] to-[#f83a00] bg-clip-text text-transparent">
             {images[currentImage].title}
           </h1>
-          <h2 className="lg:text-3xl text-lg font-bold mb-4 text-[#b6b1b1]">
+          <h2 className="lg:text-3xl text-xl font-bold mb-4 text-[#b6b1b1]">
             {images[currentImage].highlight}
           </h2>
-          <p className="lg:text-lg text-lg text-left text-gray-100 mb-4">
+          <p className="lg:text-lg text-sm text-left text-gray-100 mb-4">
             {images[currentImage].description}
           </p>
           {/* Buttons */}
