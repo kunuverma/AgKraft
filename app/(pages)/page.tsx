@@ -10,8 +10,8 @@ const Home = () => {
 
   return (
     <>
-    <Slider/>
-    <Company/>
+      <Slider />
+      <Company />
     </>
   );
 }
