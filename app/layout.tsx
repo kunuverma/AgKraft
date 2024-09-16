@@ -9,14 +9,14 @@ import { Provider } from "react-redux";
 import Footer from "./components/common/Footer"; 
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
-import { useEffect } from "react";
+import { ReactNode, useEffect } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Navbar from "./components/common/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children } : {children: ReactNode}) {
   useEffect(() => {
     AOS.init({
       duration: 800,
