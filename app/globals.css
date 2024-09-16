@@ -31,3 +31,8 @@ body {
     text-wrap: balance;
   }
 }
+
+.gradient-border {
+  border-image: linear-gradient(to right, #e7431a, #fa6a09) 1;
+}
+

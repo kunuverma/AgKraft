@@ -1,17 +1,11 @@
 "use client";
 
-import Company from "../_components/about-company/company";
-import Slider from "../_components/slider/slider";
-
-
+import HomePage from "../_components/home/page";
 
 const Home = () => {
-
-
   return (
     <>
-      <Slider />
-      <Company />
+      <HomePage />
     </>
   );
 }

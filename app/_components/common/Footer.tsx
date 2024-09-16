@@ -3,8 +3,8 @@ import { FaPhoneAlt, FaEnvelope, FaFacebook, FaTwitter, FaLinkedin } from 'react
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-8 mt-10">
-      <div className="container mx-auto px-4">
+    <footer className="bg-gray-800 text-white">
+      <div className="container mx-auto px-10 py-4">
 
         <div className="flex flex-col md:flex-row justify-between items-center md:items-start text-center md:text-left space-y-4 md:space-y-0">
 
@@ -14,18 +14,18 @@ const Footer = () => {
               <img src="/assest/logo.png" alt="assests/logo.png" className='w-26 h-24' />
             </div>
             <div>
-            <h3 className="text-lg font-semibold mb-2">Contact Us</h3>
-            <p className="flex items-center justify-center md:justify-start mb-1">
-              <FaPhoneAlt className="mr-2" /> +91 98704 04499
-            </p>
-            <p className="flex items-center justify-center md:justify-start mb-1">
-              <FaEnvelope className="mr-2" /> support@maicourt.com
-            </p>
-            <p className="justify-center md:justify-start mb-1">
+              <h3 className="text-lg font-semibold mb-2">Contact Us</h3>
+              <p className="flex items-center justify-center md:justify-start mb-1">
+                <FaPhoneAlt className="mr-2" /> +91 98704 04499
+              </p>
+              <p className="flex items-center justify-center md:justify-start mb-1">
+                <FaEnvelope className="mr-2" /> support@maicourt.com
+              </p>
+              <p className="justify-center md:justify-start mb-1">
                 Address - GL 07, Ashoka Estate, Barakhamba Road, New Delhi
               </p>
             </div>
-            
+
           </div>
 
           {/* Quick Links */}
