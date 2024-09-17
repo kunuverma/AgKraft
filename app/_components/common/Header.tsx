@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 export default function Header() {
   const [isAnimating, setIsAnimating] = useState(true);
   const [currentImage, setCurrentImage] = useState(0);
-  const [scrolled, setScrolled] = useState(false); 
+  const [scrolled, setScrolled] = useState(false);
 
   const images = [
     {
@@ -58,18 +58,13 @@ export default function Header() {
 
       {/* Background Image and Title Section */}
       <div
-        className={`relative w-full h-[600px] shadow-[0px_10px_20px_-2px_#ecc94b] bg-cover bg-no-repeat bg-center transition-all duration-1000   ${
-          isAnimating ? "opacity-100" : "opacity-0"
-        }`}
-        style={{
-          backgroundImage: `url(${images[currentImage].src})`,
-        }}
-      >
+        className={`relative w-full h-[600px] shadow-[0px_10px_20px_-2px_#ecc94b] bg-cover bg-no-repeat bg-center transition-all duration-1000   ${isAnimating ? "opacity-100" : "opacity-0"
+          }`}
+        style={{ backgroundImage: `url(${images[currentImage].src})`, }}>
         {/* Title, Description, and Buttons */}
         <div
-          className={`absolute left-10 mt-[11rem] lg:w-[40%] w-[60%] h-[20rem] inset-0 flex flex-col justify-center items-center text-center transition-all duration-1000 transform ${
-            isAnimating ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
-          }`}
+          className={`absolute left-10 mt-[11rem] lg:w-[40%] w-[60%] h-[20rem] inset-0 flex flex-col justify-center items-center text-center transition-all duration-1000 transform ${isAnimating ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
+            }`}
         >
           <h1 className="lg:text-[2rem] text-xl font-bold mb-4 bg-gradient-to-r from-[#f35d37] to-[#f83a00] bg-clip-text text-transparent">
             {images[currentImage].title}
