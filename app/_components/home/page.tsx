@@ -5,7 +5,7 @@ import Portfolio from "./Portfolio";
 
 const HomePage = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-[#F9F9F9]">
       <Header />
       <Cards />
       <Portfolio />
