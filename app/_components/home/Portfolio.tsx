@@ -54,7 +54,7 @@ const Portfolio = () => {
     };
 
     return (
-        <div className='text-center mt-10'>
+        <div className='text-center'>
             <div className="w-full p-4 text-black">
                 <h1 className="text-4xl font-bold mb-2 text-[#FE5C3D]">Our Portfolio</h1>
                 <p className="text-lg text-gray-700">Explore our diverse range of projects.</p>
