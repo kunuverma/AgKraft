@@ -204,11 +204,14 @@ import { projects } from "@/data/home-data";
 const Cards = () => {
   return (
     <>
-      <div className="text-center">
-        <h1 className="text-4xl text-[#FF3115]">Our Core Services</h1>
+      <div className="flex justify-center items-center gap-3">
+        <h1 className="text-4xl text-[#FF3115] font-bold bg-clip-text leading-none tracking-tighter whitespace-pre-wrap">Our Core</h1>
+        <span className="mt-[2px] whitespace-pre-wrap bg-gradient-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff] bg-clip-text text-4xl font-bold leading-none tracking-tighter text-transparent">
+          Services
+        </span>
       </div>
       <div className="h-full relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center">
-        <div className="absolute inset-0 w-full h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
+        <div className="absolute inset-0 w-full h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none shadow-md" />
         <Boxes />
 
         <div className="px-20 max-w-[1560px] mx-auto">

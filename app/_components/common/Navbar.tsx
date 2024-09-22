@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { Button } from "@/components/ui/button";
+import ShimmerButton from "@/components/magicui/shimmer-button";
+
 
 // Import Montserrat font
 const montserrat = Montserrat({
@@ -37,7 +39,7 @@ const Navbar = () => {
         : "bg-slate-950 p-[1px] border-b-0"
         }`}
     >
-      <div className={`flex items-center justify-between px-10 ${montserrat.className}`}>
+      <div className={`flex items-center justify-between px-20 ${montserrat.className}`}>
         {/* Logo */}
         <div className="font-bold text-2xl text-white">
           <Link href={"/"}>
@@ -107,7 +109,7 @@ const Navbar = () => {
         {/* Premium Button */}
         <div className="hidden md:flex">
           <Button
-            className="bg-gradient-to-r from-[#e7431a] to-[#fa6a09] hover:bg-gradient-to-r hover:from-[#e78167] hover:to-[#fa802f] text-white"
+            className="text-lg font-medium bg-gradient-to-r from-[#e7431a] to-[#fa6a09] hover:bg-gradient-to-r hover:from-[#e78167] hover:to-[#fa802f] text-white"
             variant="outline"
           >
             Premium Services
