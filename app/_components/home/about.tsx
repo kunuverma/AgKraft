@@ -22,8 +22,8 @@ const About = () => {
                         <span className="whitespace-pre-wrap bg-gradient-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff] bg-clip-text text-6xl font-bold leading-none tracking-tighter text-transparent">
                             What We Stand For
                         </span>
-                        <h1 className='text-[#2A2438] text-xl font-medium'>Empowering businesses through technology</h1>
-                        <p className='text-lg text-[#2A2438] font-normal text-pretty text-center'>Embark on a journey of digital transformation with AGKraft,
+                        <h1 className='text-[#121C2D] text-xl font-medium'>Empowering businesses through technology</h1>
+                        <p className='text-lg text-[#121C2D] font-normal text-pretty text-center'>Embark on a journey of digital transformation with AGKraft,
                             where innovation meets expertise. where innovation meets expertise to propel your business forward in the ever-evolving digital landscape.
                             With a steadfast commitment to delivering unparalleled IT solutions, we offer a compelling blend of creativity,
                             technical proficiency, and client-centric approach that sets us apart from the rest.</p>

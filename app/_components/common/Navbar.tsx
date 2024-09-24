@@ -62,7 +62,7 @@ const Navbar = () => {
                   <Link
                     href={item.path}
                     className={`border border-transparent hover:border-gray-300 px-3 py-2 rounded-lg text-base transition-all duration-200 ${scrolled
-                      ? "text-[#222831]"
+                      ? "text-[#121C2D]"
                       : "text-white"
                       }`}
                   >
@@ -72,7 +72,7 @@ const Navbar = () => {
                   <>
                     <span
                       className={`border border-transparent hover:border-gray-300 px-4 py-2 rounded-lg text-base transition-all duration-200 cursor-pointer ${scrolled
-                        ? "text-[#222831]"
+                        ? "text-[#121C2D]"
                         : "text-white"
                         }`}
                     >
@@ -90,7 +90,7 @@ const Navbar = () => {
                                   .toLowerCase()
                                   .replace(/\s+/g, "-")}`
                             }
-                            className="block px-4 py-2 lg:text-gray-600 text-gray-300 hover:bg-gray-200 font-helvetica text-sm font-medium"
+                            className="block px-4 py-2 lg:text-[#121C2D] text-gray-300 hover:bg-gray-200 font-helvetica text-sm font-medium"
                           >
                             {typeof submenu === "object"
                               ? submenu.name
