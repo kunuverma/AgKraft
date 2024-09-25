@@ -39,7 +39,7 @@ const Navbar = () => {
         : "bg-slate-950 p-[1px] border-b-0"
         }`}
     >
-      <div className={`flex items-center justify-between px-20 ${montserrat.className}`}>
+      <div className={`flex items-center justify-between lg:px-20 px-1 ${montserrat.className}`}>
         {/* Logo */}
         <div className="font-bold text-2xl text-white">
           <Link href={"/"}>
@@ -62,7 +62,7 @@ const Navbar = () => {
                   <Link
                     href={item.path}
                     className={`border border-transparent hover:border-gray-300 px-3 py-2 rounded-lg text-base transition-all duration-200 ${scrolled
-                      ? "text-[#222831]"
+                      ? "text-[#121C2D]"
                       : "text-white"
                       }`}
                   >
@@ -72,7 +72,7 @@ const Navbar = () => {
                   <>
                     <span
                       className={`border border-transparent hover:border-gray-300 px-4 py-2 rounded-lg text-base transition-all duration-200 cursor-pointer ${scrolled
-                        ? "text-[#222831]"
+                        ? "text-[#121C2D]"
                         : "text-white"
                         }`}
                     >
@@ -90,7 +90,7 @@ const Navbar = () => {
                                   .toLowerCase()
                                   .replace(/\s+/g, "-")}`
                             }
-                            className="block px-4 py-2 lg:text-gray-600 text-gray-300 hover:bg-gray-200 font-helvetica text-sm font-medium"
+                            className="block px-4 py-2 lg:text-[#121C2D] text-gray-300 hover:bg-gray-200 font-helvetica text-sm font-medium"
                           >
                             {typeof submenu === "object"
                               ? submenu.name
@@ -109,7 +109,7 @@ const Navbar = () => {
         {/* Premium Button */}
         <div className="hidden md:flex">
           <Button
-            className="text-lg font-medium bg-gradient-to-r from-[#e7431a] to-[#fa6a09] hover:bg-gradient-to-r hover:from-[#e78167] hover:to-[#fa802f] text-white"
+            className="text-sm font-medium bg-gradient-to-r from-[#e7431a] to-[#fa6a09] hover:bg-gradient-to-r hover:from-[#e78167] hover:to-[#fa802f] text-white"
             variant="outline"
           >
             Premium Services
@@ -184,7 +184,7 @@ const Navbar = () => {
             ))}
             {/* Premium Button in Mobile */}
             <li>
-              <button className="bg-gradient-to-r from-[#e7431a] to-[#fa6a09] hover:bg-gradient-to-r hover:from-[#e78167] hover:to-[#fa802f] text-white font-semibold px-6 py-2 rounded-lg">
+              <button className="bg-gradient-to-r from-[#e7431a] to-[#fa6a09] hover:bg-gradient-to-r hover:from-[#e78167] hover:to-[#fa802f] text-white font-medium text-sm px-6 py-2 rounded-lg">
                 Premium Services
               </button>
             </li>

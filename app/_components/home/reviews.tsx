@@ -82,7 +82,7 @@ const Reviews = () => {
     return (
         <>
 
-            <div className="relative flex h-[500px] w-full flex-col items-center py-8 overflow-hidden rounded-lg border bg-background md:shadow-xl bg-red-50 shadow-md">
+            <div className="relative flex h-[500px] w-full flex-col items-center py-8 overflow-hidden rounded-lg border bg-background bg-red-50 shadow-md">
                 <div className="flex justify-center items-center gap-3">
                     <h1 className="text-4xl text-[#FF3115] font-bold bg-clip-text leading-none tracking-tighter whitespace-pre-wrap">Words From</h1>
                     <span className="mt-[2px] whitespace-pre-wrap bg-gradient-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff] bg-clip-text text-4xl font-bold leading-none tracking-tighter text-transparent">

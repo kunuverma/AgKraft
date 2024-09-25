@@ -2,6 +2,8 @@
 import Header from "../common/Header";
 import About from "./about";
 import Cards from "./Cards";
+import EnquiryForm from "./enquiry-from";
+import Feature from "./feature";
 import Portfolio from "./Portfolio";
 import Reviews from "./reviews";
 
@@ -13,6 +15,8 @@ const HomePage = () => {
       <Cards />
       <Portfolio />
       <Reviews/>
+      <EnquiryForm/>
+      <Feature/>
     </div>
   )
 }

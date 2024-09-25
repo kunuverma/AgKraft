@@ -1,73 +1,69 @@
+import React from 'react';
+import { FaFacebook, FaTwitter, FaYoutube } from 'react-icons/fa';
+import Image from 'next/image';
+import logo from "@/public/assest/logo.png"
+import { FaLocationDot } from "react-icons/fa6";
+import { FaPhone } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
 
-import { FaPhoneAlt, FaEnvelope, FaFacebook, FaTwitter, FaLinkedin } from 'react-icons/fa';
+const Footer: React.FC = () => {
+  // Define the logo color as orange-red
+  const logoColor = '#FF5733'; // Change this to match the exact color from the logo
 
-const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white">
-      <div className="container mx-auto px-10 py-4">
-
-        <div className="flex flex-col md:flex-row justify-between items-center md:items-start text-center md:text-left space-y-4 md:space-y-0">
-
-          {/* Contact Information */}
-          <div className="mb-4 md:mb-0 flex gap-y-10 flex-col">
-            <div className=''>
-              <img src="/assest/logo.png" alt="assests/logo.png" className='w-26 h-24' />
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-2">Contact Us</h3>
-              <p className="flex items-center justify-center md:justify-start mb-1">
-                <FaPhoneAlt className="mr-2" /> +91 98704 04499
-              </p>
-              <p className="flex items-center justify-center md:justify-start mb-1">
-                <FaEnvelope className="mr-2" /> support@maicourt.com
-              </p>
-              <p className="justify-center md:justify-start mb-1">
-                Address - GL 07, Ashoka Estate, Barakhamba Road, New Delhi
-              </p>
-            </div>
-
+    <footer className="bg-[#121C2D] text-gray-400 py-10 px-4">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Left Section */}
+        <div>
+          <div className="flex items-center space-x-3 mb-4">
+            {/* AGKraft Logo */}
+            <Image src={logo} alt="AGKraft Logo" width={80} height={80} />
+            <h2 className="text-white font-bold text-2xl">AGKRAFT</h2>
           </div>
-
-          {/* Quick Links */}
-          <div className="mb-4 md:mb-0">
-            <h3 className="text-lg font-semibold mb-2">Quick Links</h3>
-            <ul>
-              <li className="mb-1">
-                <a href="/about" className="hover:text-yellow-300 transition">About Us</a>
-              </li>
-              <li className="mb-1">
-                <a href="/services" className="hover:text-yellow-300 transition">Services</a>
-              </li>
-              <li className="mb-1">
-                <a href="/privacy" className="hover:text-yellow-300 transition">Privacy Policy</a>
-              </li>
-              <li className="mb-1">
-                <a href="/contact" className="hover:text-yellow-300 transition">Contact Us</a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Social Media Links */}
-          <div className="mb-4 md:mb-0">
-            <h3 className="text-lg font-semibold mb-2">Follow Us</h3>
-            <div className="flex justify-center md:justify-start space-x-4">
-              <a href="https://facebook.com" className="hover:text-yellow-300 transition">
-                <FaFacebook size={24} />
-              </a>
-              <a href="https://twitter.com" className="hover:text-yellow-300 transition">
-                <FaTwitter size={24} />
-              </a>
-              <a href="https://linkedin.com" className="hover:text-yellow-300 transition">
-                <FaLinkedin size={24} />
-              </a>
-            </div>
+          <p className="text-gray-400 mb-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.
+          </p>
+          <div className="flex space-x-4 text-2xl">
+            <FaFacebook className="cursor-pointer hover:text-orange-400" style={{ color: logoColor }} />
+            <FaTwitter className="cursor-pointer hover:text-orange-400" style={{ color: logoColor }} />
+            <FaYoutube className="cursor-pointer hover:text-orange-400" style={{ color: logoColor }} />
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="text-center mt-8 border-t border-gray-700 pt-4">
-          <p>&copy; 2024 mAICourt. All Rights Reserved.</p>
+        {/* Middle Section */}
+        <div>
+          <h3 className="text-white font-bold mb-4">Our Store</h3>
+          <ul className="space-y-2">
+            <li><a href="#" className="hover:text-orange-500">Home</a></li>
+            <li><a href="#" className="hover:text-orange-500">About</a></li>
+            <li><a href="#" className="hover:text-orange-500">Service</a></li>
+            <li><a href="#" className="hover:text-orange-500">Contact</a></li>
+          </ul>
         </div>
+
+        {/* Right Section */}
+        <div>
+          <h3 className="text-white font-bold mb-4">Get In Touch</h3>
+          <ul className="space-y-4">
+            <li className='flex items-center gap-2'>
+              <span className="text-orange-500 text-xl"><FaLocationDot /></span> 2443 Oak Ridge Omaha, QA 45065
+            </li>
+            <li className='flex items-center gap-2'>
+              <span className="text-orange-500 text-xl"><FaPhone /></span> 9262975957
+            </li>
+            {/* <li>
+              <span className="text-orange-500">📱</span> 082-245-7253
+            </li> */}
+            <li className='flex items-center gap-2'>
+              <span className="text-orange-500 text-xl"><MdEmail /></span> agkraft@gmail.com
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Bottom Section */}
+      <div className="text-center text-gray-500 text-sm mt-10">
+        <p>Copyright © 2024 AGKraft | Powered by AGKraft</p>
       </div>
     </footer>
   );
