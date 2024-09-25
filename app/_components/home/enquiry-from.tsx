@@ -1,4 +1,3 @@
-// pages/EnquiryForm.tsx
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -43,15 +42,18 @@ const EnquiryForm = () => {
                     Today
                 </span>
             </div>
-            <div className='flex flex-row gap-36 bg-white rounded-xl'>
-                <div className='rounded-xl'>
+
+            <div className='flex flex-col md:flex-row gap-10 md:gap-36 bg-white rounded-xl px-4 md:px-0'>
+                {/* Image */}
+                <div className='hidden md:block rounded-xl'>
                     <Image
                         className="w-[450px] h-full rounded-xl"
                         src={contact}
                         alt=""
                     />
-
                 </div>
+
+                {/* Form */}
                 <form
                     onSubmit={handleSubmit(onSubmit)}
                     className="bg-white p-8 rounded-lg w-full max-w-lg mt-4">
@@ -110,10 +112,10 @@ const EnquiryForm = () => {
                         {errors.message && <span className="text-red-500 text-sm">{errors.message.message}</span>}
                     </div>
 
+                    {/* Button */}
                     <button
                         type="submit"
-                        className="mt-6 w-full px-4 py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 focus:outline-none"
-                    >
+                        className="px-8 py-2 mt-6 w-full rounded-md bg-blue-600 text-white font-bold transition duration-200 hover:bg-white hover:text-[#121C2D] border-2 border-transparent hover:border-[#FD3930]">
                         ENQUIRY NOW
                     </button>
                 </form>

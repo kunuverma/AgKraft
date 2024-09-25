@@ -39,7 +39,7 @@ const Navbar = () => {
         : "bg-slate-950 p-[1px] border-b-0"
         }`}
     >
-      <div className={`flex items-center justify-between px-20 ${montserrat.className}`}>
+      <div className={`flex items-center justify-between lg:px-20 px-1 ${montserrat.className}`}>
         {/* Logo */}
         <div className="font-bold text-2xl text-white">
           <Link href={"/"}>
@@ -109,7 +109,7 @@ const Navbar = () => {
         {/* Premium Button */}
         <div className="hidden md:flex">
           <Button
-            className="text-lg font-medium bg-gradient-to-r from-[#e7431a] to-[#fa6a09] hover:bg-gradient-to-r hover:from-[#e78167] hover:to-[#fa802f] text-white"
+            className="text-sm font-medium bg-gradient-to-r from-[#e7431a] to-[#fa6a09] hover:bg-gradient-to-r hover:from-[#e78167] hover:to-[#fa802f] text-white"
             variant="outline"
           >
             Premium Services
@@ -184,7 +184,7 @@ const Navbar = () => {
             ))}
             {/* Premium Button in Mobile */}
             <li>
-              <button className="bg-gradient-to-r from-[#e7431a] to-[#fa6a09] hover:bg-gradient-to-r hover:from-[#e78167] hover:to-[#fa802f] text-white font-semibold px-6 py-2 rounded-lg">
+              <button className="bg-gradient-to-r from-[#e7431a] to-[#fa6a09] hover:bg-gradient-to-r hover:from-[#e78167] hover:to-[#fa802f] text-white font-medium text-sm px-6 py-2 rounded-lg">
                 Premium Services
               </button>
             </li>
