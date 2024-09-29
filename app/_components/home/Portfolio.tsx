@@ -54,7 +54,7 @@ const Portfolio = () => {
     };
 
     return (
-        <div className='w-full h-full flex flex-col gap-10 bg-gradient-to-r from-gray-100 from-10% via-pink-100 via-80% to-slate-200 to-90% p-6 shadow-md'>
+        <div className='w-full h-full flex flex-col gap-10 bg-gradient-to-r from-gray-300 from-10% via-pink-200 via-80% to-slate-200 to-90% p-6 shadow-md'>
             {/* Projects We've Delivered */}
             <div className="flex flex-col justify-center items-center gap-4 mt-4">
                 <div className="flex justify-center items-center gap-3">
@@ -71,13 +71,13 @@ const Portfolio = () => {
                 onMouseEnter={() => setIsPaused(true)}
                 onMouseLeave={() => setIsPaused(false)}>
                 <motion.div
-                    className="absolute inset-0 flex items-center justify-center"
+                    className="absolute inset-0 flex items-center justify-center bg-transparent"
                     key={currentSlide}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 1 }}
-                    style={{ backgroundImage: slides[currentSlide].gradient }}
+                    // style={{ backgroundImage: slides[currentSlide].gradient }}
                 >
                     <div className="relative w-full h-full flex items-center">
                         {/* Left Arrow Button */}
@@ -107,9 +107,9 @@ const Portfolio = () => {
                             </div>
 
                             {/* Text Section */}
-                            <div className="bg-gray-700 p-6 w-full md:w-[45%] rounded-lg shadow-lg">
-                                <h2 className="text-xl md:text-2xl font-bold mb-2">{slides[currentSlide].title}</h2>
-                                <p className="mb-4 text-sm md:text-base">{slides[currentSlide].description}</p>
+                            <div className=" p-6 w-full md:w-[45%] rounded-lg shadow-lg border border-gray-200">
+                                <h2 className="text-xl md:text-4xl font-bold mb-2">{slides[currentSlide].title}</h2>
+                                <p className="mb-4 text-lg  md:text-base">{slides[currentSlide].description}</p>
                                 <button
                                     className="bg-gradient-to-r from-[#e7431a] to-[#fa6a09] text-white py-2 px-4 rounded"
                                     onClick={handleLearnMoreClick}
