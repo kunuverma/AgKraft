@@ -3,6 +3,15 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 
+const gradients = [
+  "bg-gradient-to-r from-blue-300 to-blue-500",  
+  "bg-gradient-to-r from-green-300 to-green-500",  
+  "bg-gradient-to-r from-gray-100 to-gray-300",
+  "bg-gradient-to-r from-pink-300 to-red-500",  
+  "bg-gradient-to-r from-yellow-300 to-orange-500",  
+  "bg-gradient-to-r from-teal-300 to-cyan-500",  
+];
+
 export const HoverEffect = ({
   items,
   className,
@@ -19,7 +28,7 @@ export const HoverEffect = ({
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-10",
+        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10 gap-6", // Add gap for spacing between cards
         className
       )}
     >
@@ -27,14 +36,14 @@ export const HoverEffect = ({
         <Link
           href={item?.link}
           key={item?.link}
-          className="relative group  block p-2 h-full w-full"
+          className="relative group block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute inset-0 h-full w-full bg-white dark:bg-slate-800/[0.8] block  rounded-xl"
+                className={`absolute inset-0 h-full w-full block rounded-xl ${gradients[idx % gradients.length]}`} // Apply gradient dynamically
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
                 animate={{
@@ -68,7 +77,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "rounded-2xl h-full w-full p-10 overflow-hidden bg-[#24252B] border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
+        "rounded-2xl h-full w-full p-10 overflow-hidden bg-[#24252B] border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20 transition-all duration-300", // Transition for hover effect
         className
       )}
     >
@@ -78,6 +87,7 @@ export const Card = ({
     </div>
   );
 };
+
 export const CardTitle = ({
   className,
   children,
@@ -91,6 +101,7 @@ export const CardTitle = ({
     </h4>
   );
 };
+
 export const CardDescription = ({
   className,
   children,
