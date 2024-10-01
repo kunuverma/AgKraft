@@ -1,7 +1,7 @@
 export  const Navitems = [
     {
       name: "Gallery",
-      path: "/",
+      path: "/gallary",
     },
     {
       name: "Events",

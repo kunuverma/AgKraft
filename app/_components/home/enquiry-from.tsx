@@ -35,7 +35,7 @@ const EnquiryForm = () => {
     };
 
     return (
-        <div className="flex flex-col justify-center items-center gap-12 h-full bg-gradient-to-r from-sky-100 from-10% via-slate-100 via-80% to-gray-100 to-90% mb-7">
+        <div className="flex flex-col justify-center items-center gap-12 h-full bg-gradient-to-r from-sky-100 from-10% via-slate-100 via-80% to-gray-100 to-90%">
             <div className="flex justify-center items-center gap-3 mt-8">
                 <h1 className="text-4xl text-[#FF3115] font-bold bg-clip-text leading-none tracking-tighter whitespace-pre-wrap">Contact Us</h1>
                 <span className="mt-[2px] whitespace-pre-wrap bg-gradient-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff] bg-clip-text text-4xl font-bold leading-none tracking-tighter text-transparent">
@@ -43,7 +43,7 @@ const EnquiryForm = () => {
                 </span>
             </div>
 
-            <div className='flex flex-col md:flex-row gap-10 md:gap-36 bg-white rounded-xl px-4 md:px-0'>
+            <div className='flex flex-col md:flex-row gap-10 md:gap-36 bg-white rounded-xl px-4 md:px-0 mb-5'>
                 {/* Image */}
                 <div className='hidden md:block rounded-xl'>
                     <Image
