@@ -5,8 +5,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { Button } from "@/components/ui/button";
-import ShimmerButton from "@/components/magicui/shimmer-button";
-
 
 // Import Montserrat font
 const montserrat = Montserrat({
@@ -21,7 +19,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 50); // Change to true if scrolled more than 50px
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -34,10 +32,10 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`sticky top-0 inset-x-0 z-50 w-full transition-transform duration-300 ${scrolled
+      className={`sticky top-0 inset-x-0 z-50 w-full transition-all duration-300 ${scrolled
         ? "bg-white shadow-xl p-[1px] border-b-2 border-transparent gradient-border"
-        : "bg-slate-950 p-[1px] border-b-0"
-        }`}
+        : "bg-gray-900"
+        }`} // Make navbar transparent if not scrolled
     >
       <div className={`flex items-center justify-between lg:px-20 px-1 ${montserrat.className}`}>
         {/* Logo */}
@@ -64,7 +62,7 @@ const Navbar = () => {
                     className={`border border-transparent hover:border-gray-300 px-3 py-2 rounded-lg text-base transition-all duration-200 ${scrolled
                       ? "text-[#121C2D]"
                       : "text-white"
-                      }`}
+                      }`} // Text color changes based on scroll
                   >
                     {item.name}
                   </Link>
@@ -83,18 +81,10 @@ const Navbar = () => {
                         {item.submenus.map((submenu, subIdx) => (
                           <Link
                             key={subIdx}
-                            href={
-                              typeof submenu === "object"
-                                ? submenu.path
-                                : `#${submenu
-                                  .toLowerCase()
-                                  .replace(/\s+/g, "-")}`
-                            }
+                            href={typeof submenu === "object" ? submenu.path : `#${submenu.toLowerCase().replace(/\s+/g, "-")}`}
                             className="block px-4 py-2 lg:text-[#121C2D] text-gray-300 hover:bg-gray-200 font-helvetica text-sm font-medium"
                           >
-                            {typeof submenu === "object"
-                              ? submenu.name
-                              : submenu}
+                            {typeof submenu === "object" ? submenu.name : submenu}
                           </Link>
                         ))}
                       </div>
@@ -119,15 +109,9 @@ const Navbar = () => {
         {/* Toggle Button for Mobile View */}
         <div className="md:hidden">
           {isMenuOpen ? (
-            <AiOutlineClose
-              className="text-red-500 text-3xl cursor-pointer"
-              onClick={() => setIsMenuOpen(false)}
-            />
+            <AiOutlineClose className="text-red-500 text-3xl cursor-pointer" onClick={() => setIsMenuOpen(false)} />
           ) : (
-            <AiOutlineMenu
-              className="text-white text-3xl cursor-pointer"
-              onClick={() => setIsMenuOpen(true)}
-            />
+            <AiOutlineMenu className="text-white text-3xl cursor-pointer" onClick={() => setIsMenuOpen(true)} />
           )}
         </div>
 
@@ -138,19 +122,13 @@ const Navbar = () => {
               <li key={idx} className="w-full text-center">
                 {item.path ? (
                   <Link href={item.path}>
-                    <span
-                      className="block text-white hover:bg-gray-600 px-4 py-2 rounded-md"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
+                    <span className="block text-white hover:bg-gray-600 px-4 py-2 rounded-md" onClick={() => setIsMenuOpen(false)}>
                       {item.name}
                     </span>
                   </Link>
                 ) : (
                   <>
-                    <span
-                      className="block text-white hover:bg-gray-600 px-4 py-2 rounded-md cursor-pointer"
-                      onClick={() => toggleSubmenu(idx)}
-                    >
+                    <span className="block text-white hover:bg-gray-600 px-4 py-2 rounded-md cursor-pointer" onClick={() => toggleSubmenu(idx)}>
                       {item.name}
                     </span>
                     {activeSubmenu === idx && item.submenus && (
@@ -159,18 +137,12 @@ const Navbar = () => {
                           <li key={subIdx}>
                             {typeof submenu === "object" ? (
                               <Link href={submenu.path}>
-                                <span
-                                  className="block px-4 py-2 text-white bg-gray-700 hover:bg-gray-600 rounded-md"
-                                  onClick={() => setIsMenuOpen(false)}
-                                >
+                                <span className="block px-4 py-2 text-white bg-gray-700 hover:bg-gray-600 rounded-md" onClick={() => setIsMenuOpen(false)}>
                                   {submenu.name}
                                 </span>
                               </Link>
                             ) : (
-                              <span
-                                className="block px-4 py-2 text-white bg-gray-700 hover:bg-gray-600 rounded-md"
-                                onClick={() => setIsMenuOpen(false)}
-                              >
+                              <span className="block px-4 py-2 text-white bg-gray-700 hover:bg-gray-600 rounded-md" onClick={() => setIsMenuOpen(false)}>
                                 {submenu}
                               </span>
                             )}

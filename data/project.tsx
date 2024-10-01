@@ -1,3 +1,5 @@
+// data/portfolioData.js
+
 // data/project.js
 import img1 from "@/public/assest/Tech 1.png";
 import img2 from "@/public/assest/idcsite.png";
@@ -92,3 +94,29 @@ export const Projectdata = [
       design: "Productivity"
     },
 ];
+
+const slides = [
+  {
+      id: 1,
+      image: '/assest/idcsite.png',
+      title: 'IDC India',
+      description: 'Experienced web developer specializing in IDC India 2nd Website. Committed to delivering innovative, responsive, and user-centered designs that enhance digital experiences and effectively showcase IDC’s services and initiatives.',
+      url: 'https://idc-india.vercel.app/',
+  },
+  {
+      id: 2,
+      image: '/assest/mehendi.png',
+      title: 'Mehendi Designs',
+      description: 'Passionate web developer creating stunning, user-friendly websites for the mehendi industry. Combining artistry and technology, I deliver seamless online experiences that highlight unique designs and connect artists with clients.',
+      url: 'https://mehendi-art.vercel.app/',
+  },
+  {
+      id: 3,
+      image: '/assest/port.png',
+      title: 'Client Portfolio',
+      description: 'Dedicated web developer of mAI Court, implementing cutting-edge AI technology for legal solutions. I create intuitive, efficient platforms that simplify legal processes while enhancing accessibility and user engagement.',
+      url: 'https://gulshanprofile.vercel.app/',
+  },
+];
+
+export default slides;

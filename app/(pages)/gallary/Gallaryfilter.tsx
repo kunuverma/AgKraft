@@ -31,11 +31,11 @@ const FilterPage = () => {
   const [selectedTech, setSelectedTech] = useState("All");
   const [selectedDesign, setSelectedDesign] = useState("All");
 
-  const handleTechChange = (e) => {
+  const handleTechChange = (e: any) => {
     setSelectedTech(e.target.value);
   };
 
-  const handleDesignChange = (e) => {
+  const handleDesignChange = (e: any) => {
     setSelectedDesign(e.target.value);
   };
 

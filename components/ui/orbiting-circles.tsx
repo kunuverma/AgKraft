@@ -17,7 +17,7 @@ export default function OrbitingCircles({
   reverse,
   duration = 20,
   delay = 10,
-  radius = 50,
+  radius = 30,
   path = true,
 }: OrbitingCirclesProps) {
   return (
