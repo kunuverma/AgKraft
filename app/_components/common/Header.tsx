@@ -58,7 +58,7 @@ export default function Header() {
 
       {/* Background Image and Title Section */}
       <div
-        className={`relative w-full h-[600px] shadow-[0px_10px_20px_-2px_#ecc94b] bg-cover bg-no-repeat bg-center transition-all duration-1000   ${isAnimating ? "opacity-100" : "opacity-0"
+        className={`relative w-full h-[600px] bg-cover bg-no-repeat bg-center transition-all duration-1000   ${isAnimating ? "opacity-100" : "opacity-0"
           }`}
         style={{ backgroundImage: `url(${images[currentImage].src})`, }}>
         {/* Title, Description, and Buttons */}

@@ -9,7 +9,7 @@ import Reviews from "./reviews";
 
 const HomePage = () => {
   return (
-    <div className="bg-[#F9F9F9] flex flex-col justify-center gap-10 ">
+    <div className="bg-[#191A1E] flex flex-col justify-center gap-10 ">
       <Header />
       <About />
       <Cards />
