@@ -205,11 +205,18 @@ const Cards = () => {
   return (
 
     <div className="flex flex-col justify-center items-center bg-[#191A1E] h-full">
-      <h1 className="text-4xl text-white font-bold bg-clip-text leading-none tracking-tighter whitespace-pre-wrap mt-6">Our Core Services</h1>
+     <h1
+  className="text-4xl text-white font-bold bg-clip-text leading-none tracking-tighter whitespace-pre-wrap mt-6"
+  style={{ textShadow: "0px 0px 1px #f7fafc, 0px 0px 4px #f7fafc" }}
+>
+  Our Core Services
+</h1>
+
+
 
       <div className="h-full relative w-full overflow-hidden bg-[#191A1E] flex flex-col items-center justify-center shadow-md">
-        <div className="absolute inset-0 w-full h-full bg-[#191A1E] z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none shadow-md" />
-        <Boxes />
+        <div className="absolute inset-0 w-full h-full bg-[#191A1E] z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none shadow-md " />
+        {/* <Boxes /> */}
         <div className="px-20 max-w-[1560px] mx-auto">
           <HoverEffect items={projects} />
         </div>
