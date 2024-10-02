@@ -57,37 +57,46 @@ const ReviewCard = ({
     return (
         <figure
             className={cn(
-                "relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4 ",
-                // light styles
-                "border-white bg-gray-950/[.01] hover:bg-white",
-                // dark styles
-                "dark:border-white dark:bg-[#191A1E] dark:hover:bg-white",
+                "relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4 transition-colors duration-300",
+                // Default light styles: background and text color
+                "border-white bg-gray-950/[.01] text-white",
+                // On hover: background white, text black
+                "hover:bg-white hover:text-black",
+                // Dark mode support
+                "dark:border-white dark:bg-[#191A1E] dark:text-white dark:hover:bg-white"
             )}
         >
-            <div className="flex flex-row items-center gap-2 ">
+            <div className="flex flex-row items-center gap-2">
                 <img className="rounded-full" width="32" height="32" alt="" src={img} />
-                <div className="flex flex-col ">
-                    <figcaption className="text-sm font-medium  text-white ">
+                <div className="flex flex-col">
+                    <figcaption className="text-sm font-medium transition-colors duration-300">
                         {name}
                     </figcaption>
-                    <p className="text-xs font-medium  text-white">{username}</p>
+                    <p className="text-xs font-medium transition-colors duration-300">
+                        {username}
+                    </p>
                 </div>
             </div>
-            <blockquote className="mt-2 text-sm  text-white">{body}</blockquote>
+            <blockquote className="mt-2 text-sm transition-colors duration-300">
+                {body}
+            </blockquote>
         </figure>
     );
 };
+
+
+
 
 const Reviews = () => {
     return (
         <>
 
-            <div className="relative flex h-[500px] w-full flex-col items-center py-8 overflow-hidden  ">
-                <div className="flex justify-center items-center gap-3">
-                    <h1 className="text-4xl text-[#FF3115] font-bold bg-clip-text leading-none tracking-tighter whitespace-pre-wrap">Words From</h1>
-                    <span className="mt-[2px] whitespace-pre-wrap bg-gradient-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff] bg-clip-text text-4xl font-bold leading-none tracking-tighter text-transparent">
-                        Clients
+            <div className="relative flex h-[450px] w-full flex-col items-center py-8 overflow-hidden  ">
+                <div className='flex items-center gap-2 sm:gap-3'>
+                    <span className="text-white whitespace-pre-wrap text-left relative z-20 mt-2 bg-clip-text text-3xl sm:text-4xl font-bold leading-none tracking-wide text-transparent">
+                        Words From
                     </span>
+                    <span className='whitespace-pre-wrap text-left relative z-20 mt-2 bg-clip-text text-3xl sm:text-4xl font-bold leading-none tracking-wide text-transparent bg-gradient-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff]'>Our Clients</span>
                 </div>
                 <Marquee pauseOnHover className="[--duration:20s] mt-12 ">
                     {firstRow.map((review) => (

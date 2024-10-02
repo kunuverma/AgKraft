@@ -29,18 +29,16 @@ const Portfolio = () => {
     };
 
     return (
-        <div className='w-full h-full flex flex-col justify-center items-center bg-[#191A1E]'>
+        <div className='flex flex-col justify-center items-center my-5 mx-5 sm:mx-10 bg-[#191A1E] h-full shadow-[0px_0px_5px_0px_#6E80C3] rounded-md transition-all duration-300 ease-in-out hover:shadow-[0px_0px_5px_0px_#6E80C3] hover:border-red-500 border border-gray-700'>
             {/* Projects We've Delivered */}
             <div className="flex flex-col justify-center items-center gap-4 mt-4">
-                <div className="flex items-center gap-4 mt-4">
-                    <h1 className="whitespace-pre-wrap text-white bg-clip-text text-5xl font-bold leading-none tracking-tighter text-transparent">Projects We’ve</h1>
-                    <h1
-                        className=" whitespace-pre-wrap bg-gradient-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff] bg-clip-text text-5xl font-bold leading-none tracking-tighter text-transparent"
-                    >
-                        Delivered
-                    </h1>
+                <div className='flex items-center gap-2 sm:gap-3 mt-4'>
+                    <span className="text-white whitespace-pre-wrap text-left relative z-20 mt-2 bg-clip-text text-3xl sm:text-4xl font-bold leading-none tracking-wide text-transparent">
+                        Projects We’ve
+                    </span>
+                    <span className='whitespace-pre-wrap text-left relative z-20 mt-2 bg-clip-text text-3xl sm:text-4xl font-bold leading-none tracking-wide text-transparent bg-gradient-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff]'>Delivered</span>
                 </div>
-                <h1 className='text-white text-xl font-medium text-center'>At AGKraft, our projects reflect our passion for excellence and our ability to bring visions to life.</h1>
+                <h1 className='text-white text-lg font-normal text-center leading-none tracking-wide text-transparent'>At AGKraft, our projects reflect our passion for excellence and our ability to bring visions to life.</h1>
             </div>
 
             <div
