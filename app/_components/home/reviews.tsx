@@ -57,23 +57,23 @@ const ReviewCard = ({
     return (
         <figure
             className={cn(
-                "relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
+                "relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4 ",
                 // light styles
-                "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
+                "border-white bg-gray-950/[.01] hover:bg-white",
                 // dark styles
-                "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
+                "dark:border-white dark:bg-[#191A1E] dark:hover:bg-white",
             )}
         >
-            <div className="flex flex-row items-center gap-2">
+            <div className="flex flex-row items-center gap-2 ">
                 <img className="rounded-full" width="32" height="32" alt="" src={img} />
-                <div className="flex flex-col">
-                    <figcaption className="text-sm font-medium dark:text-white">
+                <div className="flex flex-col ">
+                    <figcaption className="text-sm font-medium  text-white ">
                         {name}
                     </figcaption>
-                    <p className="text-xs font-medium dark:text-white/40">{username}</p>
+                    <p className="text-xs font-medium  text-white">{username}</p>
                 </div>
             </div>
-            <blockquote className="mt-2 text-sm">{body}</blockquote>
+            <blockquote className="mt-2 text-sm  text-white">{body}</blockquote>
         </figure>
     );
 };
@@ -82,14 +82,14 @@ const Reviews = () => {
     return (
         <>
 
-            <div className="relative flex h-[500px] w-full flex-col items-center py-8 overflow-hidden bg-background bg-red-50">
+            <div className="relative flex h-[500px] w-full flex-col items-center py-8 overflow-hidden  ">
                 <div className="flex justify-center items-center gap-3">
                     <h1 className="text-4xl text-[#FF3115] font-bold bg-clip-text leading-none tracking-tighter whitespace-pre-wrap">Words From</h1>
                     <span className="mt-[2px] whitespace-pre-wrap bg-gradient-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff] bg-clip-text text-4xl font-bold leading-none tracking-tighter text-transparent">
                         Clients
                     </span>
                 </div>
-                <Marquee pauseOnHover className="[--duration:20s] mt-12">
+                <Marquee pauseOnHover className="[--duration:20s] mt-12 ">
                     {firstRow.map((review) => (
                         <ReviewCard key={review.username} {...review} />
                     ))}
@@ -99,8 +99,8 @@ const Reviews = () => {
                         <ReviewCard key={review.username} {...review} />
                     ))}
                 </Marquee>
-                <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
-                <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
+                <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-[#191A1E] dark:from-background"></div>
+                <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-[#191A1E] dark:from-background"></div>
             </div>
         </>
 

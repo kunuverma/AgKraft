@@ -2,7 +2,8 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import Image from 'next/image';
-import contact from "@/public/assest/CONTACT US.gif"
+import contact from "@/public/assest/CONTACT US.gif";
+// Replace with the new image path
 
 interface FormData {
     firstName: string;
@@ -35,10 +36,12 @@ const EnquiryForm = () => {
     };
 
     return (
-        <div className="flex flex-col justify-center items-center gap-12 h-full bg-gradient-to-r from-sky-100 from-10% via-slate-100 via-80% to-gray-100 to-90%">
+        <div className="flex flex-col justify-center items-center gap-12 h-full bg-gradient-to-r from-[#191A1E] from-10% via-[#383838] via-80% to-[#191A1E] to-90%">
             <div className="flex justify-center items-center gap-3 mt-8">
-                <h1 className="text-4xl text-[#FF3115] font-bold bg-clip-text leading-none tracking-tighter whitespace-pre-wrap">Contact Us</h1>
-                <span className="mt-[2px] whitespace-pre-wrap bg-gradient-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff] bg-clip-text text-4xl font-bold leading-none tracking-tighter text-transparent">
+                <h1 className="text-4xl text-[#FF3115] font-bold leading-none tracking-tighter">
+                    Contact Us
+                </h1>
+                <span className="mt-[2px] bg-gradient-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff] bg-clip-text text-4xl font-bold leading-none tracking-tighter text-transparent">
                     Today
                 </span>
             </div>
@@ -48,15 +51,15 @@ const EnquiryForm = () => {
                 <div className='hidden md:block rounded-xl'>
                     <Image
                         className="w-[450px] h-full rounded-xl"
-                        src={contact}
-                        alt=""
+                        src={contact} // Replacing with the new image
+                        alt="Contact Us Graphic"
                     />
                 </div>
 
                 {/* Form */}
                 <form
                     onSubmit={handleSubmit(onSubmit)}
-                    className="bg-white p-8 rounded-lg w-full max-w-lg mt-4">
+                    className="bg-white p-8 rounded-lg w-full max-w-lg mt-4 shadow-lg transition-transform transform hover:scale-105 duration-300 ease-in-out">
                     <div className="grid grid-cols-2 gap-10">
                         <div>
                             <input
@@ -115,7 +118,7 @@ const EnquiryForm = () => {
                     {/* Button */}
                     <button
                         type="submit"
-                        className="px-8 py-2 mt-6 w-full rounded-md bg-blue-600 text-white font-bold transition duration-200 hover:bg-white hover:text-[#121C2D] border-2 border-transparent hover:border-[#FD3930]">
+                        className="px-8 py-2 mt-6 w-full rounded-md bg-gradient-to-r from-blue-600 to-purple-500 text-white font-bold transition duration-200 hover:bg-white hover:text-[#121C2D] border-2 border-transparent hover:border-[#FD3930]">
                         ENQUIRY NOW
                     </button>
                 </form>

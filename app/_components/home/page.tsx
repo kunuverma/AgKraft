@@ -9,7 +9,7 @@ import Slider from "@/app/_components/slider/slider";
 
 const HomePage = () => {
   return (
-    <div className="bg-[#191A1E] flex flex-col justify-center">
+    <div className="bg-[#191A1E]  flex flex-col justify-center">
       <Slider/>
       <About />
       <Cards />

@@ -6,9 +6,9 @@ import FilterPage from "./Gallaryfilter"
 const Gallery = () => {
 return(
   <div className="">
-    <div>
+    {/* <div>
       <FilterPage/>
-    </div>
+    </div> */}
   <div>
   <ThreeDCardDemo/>
   </div>
