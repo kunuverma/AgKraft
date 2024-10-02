@@ -33,8 +33,8 @@ const Navbar = () => {
   return (
     <nav
       className={`sticky top-0 inset-x-0 z-50 w-full transition-all duration-300 ${scrolled
-        ? "bg-white shadow-xl p-[1px] border-b-2 border-transparent gradient-border"
-        : "bg-gray-900"
+        ? "bg-[#17181b] shadow-xl p-[1px] border-b-2 border-transparent  gradient-border"
+        : "bg-[#17181b]"
         }`} // Make navbar transparent if not scrolled
     >
       <div className={`flex items-center justify-between lg:px-20 px-1 ${montserrat.className}`}>
@@ -60,7 +60,7 @@ const Navbar = () => {
                   <Link
                     href={item.path}
                     className={`border border-transparent hover:border-gray-300 px-3 py-2 rounded-lg text-base transition-all duration-200 ${scrolled
-                      ? "text-[#121C2D]"
+                      ? "text-white"
                       : "text-white"
                       }`} // Text color changes based on scroll
                   >
@@ -70,7 +70,7 @@ const Navbar = () => {
                   <>
                     <span
                       className={`border border-transparent hover:border-gray-300 px-4 py-2 rounded-lg text-base transition-all duration-200 cursor-pointer ${scrolled
-                        ? "text-[#121C2D]"
+                        ? "text-white"
                         : "text-white"
                         }`}
                     >

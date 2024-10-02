@@ -48,7 +48,7 @@ const FilterPage = () => {
   });
 
   return (
-    <div className="p-4">
+    <div className="">
       <h1 className="text-2xl font-bold mb-4">Choose Your Favourite Project</h1>
 
       <div className="flex mb-4">
@@ -87,7 +87,7 @@ const FilterPage = () => {
         </button>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-4">
+      <div className="flex flex-wrap justify-center ">
         {filteredProjects.map((data) => (
           <div
             key={data.id}
