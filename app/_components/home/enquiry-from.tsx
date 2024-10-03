@@ -38,7 +38,7 @@ const EnquiryForm = () => {
     };
 
     return (
-        <div className="flex flex-col justify-center gap-12 my-5 items-center mx-5 sm:mx-10 bg-[#191A1E] h-full shadow-[0px_0px_5px_0px_#EF476F] rounded-md transition-all duration-300 ease-in-out hover:shadow-[0px_0px_5px_0px_#EF476F] hover:border-orange-500 border border-gray-700">
+        <div className="flex flex-col justify-center gap-12 my-5 items-center mx-5 sm:mx-10 bg-[#191A1E] h-full">
             <div className='flex items-center gap-2 sm:gap-3 mt-5'>
                 <span className="text-white whitespace-pre-wrap text-left relative z-20 mt-2 bg-clip-text text-3xl sm:text-4xl font-bold leading-none tracking-tighter text-transparent">
                     Contact Us

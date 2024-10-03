@@ -1,7 +1,6 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import React, {
   createContext,
   useState,
@@ -25,26 +24,31 @@ export const CardContainer = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isMouseEntered, setIsMouseEntered] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return;
-    const { left, top, width, height } =
-      containerRef.current.getBoundingClientRect();
-    const x = (e.clientX - left - width / 2) / 25;
-    const y = (e.clientY - top - height / 2) / 25;
-    containerRef.current.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+    const { left, top, width, height } = containerRef.current.getBoundingClientRect();
+    const x = (e.clientX - left) / width;
+    const y = (e.clientY - top) / height;
+
+    setMousePosition({ x, y }); // Update mouse position
+    const tiltX = (x - 0.5) * 20; // Adjust tilt effect
+    const tiltY = (y - 0.5) * -20; // Adjust tilt effect
+    containerRef.current.style.transform = `rotateY(${tiltX}deg) rotateX(${tiltY}deg)`;
   };
 
-  const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseEnter = () => {
     setIsMouseEntered(true);
-    if (!containerRef.current) return;
   };
 
-  const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!containerRef.current) return;
+  const handleMouseLeave = () => {
     setIsMouseEntered(false);
-    containerRef.current.style.transform = `rotateY(0deg) rotateX(0deg)`;
+    if (containerRef.current) {
+      containerRef.current.style.transform = `rotateY(0deg) rotateX(0deg)`;
+    }
   };
+
   return (
     <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
       <div
@@ -63,10 +67,19 @@ export const CardContainer = ({
           onMouseLeave={handleMouseLeave}
           className={cn(
             "flex items-center justify-center relative transition-all duration-200 ease-linear",
-            className
+            className,
+            {
+              // Apply dynamic background gradient on hover
+              "bg-transparent": !isMouseEntered,
+              [`bg-[radial-gradient(circle_at_${mousePosition.x * 100}%_${mousePosition.y * 100}%,#181818, transparent)]`]: isMouseEntered,
+              "shadow-2xl": isMouseEntered,
+            }
           )}
           style={{
             transformStyle: "preserve-3d",
+            background: isMouseEntered
+              ? `radial-gradient(circle at ${mousePosition.x * 100}% ${mousePosition.y * 100}%, #121212, transparent)`
+              : '',
           }}
         >
           {children}

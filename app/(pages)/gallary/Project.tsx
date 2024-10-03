@@ -1,55 +1,102 @@
-// components/ui/ThreeDCardDemo.js
-"use client";
-
-import Image from "next/image";
+import React, { useState } from "react";
+import { Projectdata } from "@/data/project";
 import Link from "next/link";
-import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card"; // Adjust the import path as needed
-import { Projectdata } from "@/data/project"; // Adjust the import path as needed
+import Image from "next/image"; // Import Image from next/image
 
-export const ThreeDCardDemo = () => {
+// TypeScript interface for project data
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  image: { src: string };
+  tech: string;
+  design: string;
+  height: string;
+  lightColor?: string; // Optional light color for hover
+}
+
+export const ThreeDCardDemo: React.FC = () => {
+  // State to track the hover effect for each card individually
+  const [hoverPosition, setHoverPosition] = useState<{ x: number; y: number }[]>(Projectdata.map(() => ({ x: 0, y: 0 })));
+  const [hovering, setHovering] = useState<boolean[]>(Projectdata.map(() => false));
+
+  // Function to track mouse position for a specific card
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>, index: number) => {
+    const card = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - card.left;
+    const y = e.clientY - card.top;
+
+    // Update the hover position for the specific card
+    setHoverPosition((prevState) =>
+      prevState.map((pos, idx) => (idx === index ? { x, y } : pos))
+    );
+  };
+
+  // Mouse enter and leave handlers to toggle the light effect
+  const handleMouseEnter = (index: number) => {
+    setHovering((prevState) =>
+      prevState.map((hover, idx) => (idx === index ? true : hover))
+    );
+  };
+
+  const handleMouseLeave = (index: number) => {
+    setHovering((prevState) =>
+      prevState.map((hover, idx) => (idx === index ? false : hover))
+    );
+  };
+
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1 bg-[#191A1E]"> {/* Create a grid with responsive columns */}
-      {Projectdata.map((data) => (
-        <CardContainer key={data.id} className="inter-var mx-4">
-          <CardBody className="relative group/card bg-black border   border-white w-auto h-auto rounded-xl p-6 ">
-            <CardItem translateZ="50" className="text-xl font-bold text-neutral-100 dark:text-white">
-              {data.title}
-            </CardItem>
-            <CardItem as="p" translateZ="60" className="text-neutral-300 text-sm max-w-sm mt-2 dark:text-neutral-300">
-              {data.description}
-            </CardItem>
-            <CardItem translateZ="100" className="w-full mt-4">
+    <div className="bg-[#191A1E] min-h-screen py-10 px-5">
+      <div className="flex justify-center items-center">
+        <h1 className="text-4xl text-white font-bold bg-clip-text leading-none tracking-tighter whitespace-pre-wrap mt-2 mb-5">Our Projects</h1>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {Projectdata.map((project: Project, index: number) => (
+          <div
+            key={project.id}
+            className={`relative overflow-hidden bg-[#1E2025] shadow-lg ${project.height} group`}
+            onMouseMove={(e) => handleMouseMove(e, index)}
+            onMouseEnter={() => handleMouseEnter(index)}
+            onMouseLeave={() => handleMouseLeave(index)}
+          >
+            {/* Light Effect following the mouse */}
+            <div
+              className={`absolute w-60 h-60 bg-gradient-to-r rounded-full blur-lg pointer-events-none transition-opacity duration-300 ease-out transform 
+              ${hovering[index] ? 'opacity-50' : 'opacity-0'}`}
+              style={{
+                background: project.lightColor
+                  ? project.lightColor
+                  : 'radial-gradient(circle, white 0%, gray 100%)', // Default white and gray if no color
+                transform: `translate(${hoverPosition[index].x - 80}px, ${hoverPosition[index].y - 80}px)`,
+              }}
+            ></div>
+
+            {/* Card Content */}
+            <div className="relative z-10 p-4">
               <Image
-                src={data.image}
-                height="1000"
-                width="800"
-                className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                alt={data.title}
+                src={project.image.src}
+                alt={project.title} // Ensure this is descriptive
+                className="w-full h-[20rem] mt-3 object-cover"
+                width={project.image.width}
+                height={project.image.height}
               />
-            </CardItem>
-            <div className="flex justify-between items-center mt-4">
-              {/* <CardItem
-                translateZ={20}
-                as={Link}
-                href="https://twitter.com/mannupaaji"
-                target="__blank"
-                className="px-4 py-2 rounded-xl text-xs font-normal text-white"
-              >
-                Try now →
-              </CardItem> */} 
-              <CardItem
-                translateZ={20}
-                as="button"
-                className="px-4 py-2 rounded-xl border border-white dark:bg-white dark:text-black text-white text-xs font-bold"
-              >
-                Explore more →
-              </CardItem>
+              <h3 className="text-white text-xl font-semibold mt-3">
+                {project.title}
+              </h3>
+              <p className="text-gray-300 mt-2">{project.description}</p>
+              <div className="mt-4 flex justify-between items-center">
+                <span className="text-sm text-gray-300">{project.tech}</span>
+                <span className="text-sm text-gray-300">{project.design}</span>
+                <Link href={`/projectdetail/${project.id}`}>
+                  <button className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-full">
+                    Select project
+                  </button>
+                </Link>
+              </div>
             </div>
-          </CardBody>
-        </CardContainer>
-      ))}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
-
-export default ThreeDCardDemo;
