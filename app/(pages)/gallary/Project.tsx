@@ -8,7 +8,11 @@ interface Project {
   id: number;
   title: string;
   description: string;
-  image: { src: string };
+  image: {
+    src: string;
+    width: number;
+    height: number;
+  };
   tech: string;
   design: string;
   height: string;
