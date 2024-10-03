@@ -3,7 +3,7 @@ import React from 'react';
 
 const Feature = () => {
     return (
-        <div className="relative flex flex-row justify-between items-center py-12 bg-black px-7">
+        <div className="relative flex flex-row justify-between items-center py-12 bg-transparent px-7">
             <div className="max-w-screen-xl">
                 {/* Heading */}
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">

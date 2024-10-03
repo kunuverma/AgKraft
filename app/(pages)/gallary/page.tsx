@@ -1,11 +1,12 @@
 "use client";
 
-import {ThreeDCardDemo} from "./Project"
+import {ThreeDCardDemo} from "./Project";
 import FilterPage from "./Gallaryfilter"
 
 const Gallery = () => {
 return(
   <div className="">
+    
     {/* <div>
       <FilterPage/>
     </div> */}

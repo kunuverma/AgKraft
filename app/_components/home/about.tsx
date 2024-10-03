@@ -1,22 +1,14 @@
+
+import ShimmerButton from "@/components/magicui/shimmer-button";
 import Image from 'next/image';
 import { CardSpotlight } from "@/components/ui/card-spotlight";
-import React from 'react';
-import ShimmerButton from "@/components/magicui/shimmer-button";
 
 export const About = () => {
     return (
-        <CardSpotlight className="relative mx-5 sm:mx-10 my-5 shadow-[0px_0px_5px_0px_#f7fafc]">
-            <div className='flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 px-5 sm:px-10'>
-                <div className='z-40'>
-                    <Image
-                        src="/assest/circle.png"
-                        alt="Description"
-                        width={400}
-                        height={400}
-                        className="w-full max-w-xs sm:max-w-sm lg:max-w-lg"
-                    />
-                </div>
-                <div className='flex flex-col w-full lg:w-[50%] text-left gap-y-5 z-40'>
+        <CardSpotlight className="relative flex flex-row items-center justify-center min-h-screen mx-10 my-5 shadow-[0px_0px_5px_0px_#f7fafc] overflow-hidden">
+            {/* Spotlight effect */}
+            <div className="absolute  inset-0 bg-gradient-to-r from-transparent via-[#1f528550] to-transparent animate-spotlight"></div>
+            <div className='flex flex-col w-full lg:w-[50%] text-left gap-y-5 z-40'>
                     <div className='flex items-center gap-2 sm:gap-3'>
                         <span className="text-white whitespace-pre-wrap text-left relative z-20 mt-2 bg-clip-text text-3xl sm:text-4xl font-bold leading-none tracking-tighter text-transparent">
                             What We
@@ -36,8 +28,20 @@ export const About = () => {
                         </ShimmerButton>
                     </div>
                 </div>
-            </div>
 
+            <div className='z-30'>
+                <Image 
+                    src="/assest/circle.png" 
+                    alt="Description"
+                    width={900} 
+                    height={700} 
+                    className="max-w-full h-auto" 
+                />
+            </div>
         </CardSpotlight>
     );
 }
+
+
+
+
