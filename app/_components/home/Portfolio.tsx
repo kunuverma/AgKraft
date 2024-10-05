@@ -26,9 +26,9 @@ const Portfolio = () => {
         }
     }, [isPaused]);
 
-    const handleLearnMoreClick = () => {
-        window.location.href = slides[currentSlide].url;
-    };
+    // const handleLearnMoreClick = () => {
+    //     window.location.href = slides[currentSlide].url;
+    // };
 
     return (
         <div className='relative w-full flex flex-col justify-center items-center bg-[#191A1E] h-[40rem]'>
@@ -104,7 +104,7 @@ const Portfolio = () => {
 
             <Link href={"/work"} className='mb-5 flex justify-end'>
                 <ShimmerButton
-                    onClick={handleLearnMoreClick}
+                    // onClick={handleLearnMoreClick}
                     className="shadow-2xl"
                 >
                     <span className="whitespace-pre-wrap text-center text-sm md:text-lg font-medium leading-none tracking-tight text-white">
