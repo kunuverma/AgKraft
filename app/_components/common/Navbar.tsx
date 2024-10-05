@@ -77,11 +77,11 @@ const Navbar = () => {
                       {item.name}
                     </span>
                     {item.submenus && (
-                      <div className="absolute hidden group-hover:block lg:bg-gray-100 bg-gray-600 shadow-lg rounded-lg mt-2 w-44 z-50">
+                      <div className="absolute hidden group-hover:block lg:bg-gray-100 bg-gray-600 shadow-lg rounded-lg mt-2 w-56 z-50">
                         {item.submenus.map((submenu, subIdx) => (
                           <Link
                             key={subIdx}
-                            href={typeof submenu === "object" ? submenu.path : `#${submenu.toLowerCase().replace(/\s+/g, "-")}`}
+                            href={submenu.path}
                             className="block px-4 py-2 lg:text-[#121C2D] text-gray-300 hover:bg-gray-200 font-helvetica text-sm font-medium"
                           >
                             {typeof submenu === "object" ? submenu.name : submenu}
@@ -97,14 +97,14 @@ const Navbar = () => {
         </div>
 
         {/* Premium Button */}
-        <div className="hidden md:flex">
+        <Link href={"/contact"} className="hidden md:flex">
           <Button
             className="text-sm font-medium bg-gradient-to-r from-[#e7431a] to-[#fa6a09] hover:bg-gradient-to-r hover:from-[#e78167] hover:to-[#fa802f] text-white"
             variant="outline"
           >
-            Premium Services
+            Contact Us
           </Button>
-        </div>
+        </Link>
 
         {/* Toggle Button for Mobile View */}
         <div className="md:hidden">
@@ -156,9 +156,14 @@ const Navbar = () => {
             ))}
             {/* Premium Button in Mobile */}
             <li>
-              <button className="bg-gradient-to-r from-[#e7431a] to-[#fa6a09] hover:bg-gradient-to-r hover:from-[#e78167] hover:to-[#fa802f] text-white font-medium text-sm px-6 py-2 rounded-lg">
-                Premium Services
-              </button>
+              <Link href={"/contact"} className="">
+                <Button
+                  className="text-sm font-medium bg-gradient-to-r from-[#e7431a] to-[#fa6a09] hover:bg-gradient-to-r hover:from-[#e78167] hover:to-[#fa802f] text-white"
+                  variant="outline"
+                >
+                  Contact Us
+                </Button>
+              </Link>
             </li>
           </ul>
         )}

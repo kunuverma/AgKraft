@@ -5,7 +5,7 @@ import Image from "next/image"; // Import Image from next/image
 
 // TypeScript interface for project data
 interface Project {
-  id: number;
+  id: string;
   title: string;
   description: string;
   image: {
@@ -55,10 +55,10 @@ export const ThreeDCardDemo: React.FC = () => {
         <h1 className="text-4xl text-white font-bold bg-clip-text leading-none tracking-tighter whitespace-pre-wrap mt-2 mb-5">Our Projects</h1>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {Projectdata.map((project: Project, index: number) => (
+        {Projectdata.map((project, index) => (
           <div
             key={project.id}
-            className={`relative overflow-hidden bg-[#1E2025] shadow-lg ${project.height} group`}
+            className={`relative overflow-hidden bg-[#1E2025] shadow-lg ${project.height} group cursor-pointer`}
             onMouseMove={(e) => handleMouseMove(e, index)}
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={() => handleMouseLeave(index)}
@@ -77,26 +77,30 @@ export const ThreeDCardDemo: React.FC = () => {
 
             {/* Card Content */}
             <div className="relative z-10 p-4">
-              <Image
-                src={project.image.src}
-                alt={project.title} // Ensure this is descriptive
-                className="w-full h-[20rem] mt-3 object-cover"
-                width={project.image.width}
-                height={project.image.height}
-              />
-              <h3 className="text-white text-xl font-semibold mt-3">
-                {project.title}
-              </h3>
-              <p className="text-gray-300 mt-2">{project.description}</p>
-              <div className="mt-4 flex justify-between items-center">
-                <span className="text-sm text-gray-300">{project.tech}</span>
-                <span className="text-sm text-gray-300">{project.design}</span>
-                <Link href={`/projectdetail/${project.id}`}>
-                  <button className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-full">
-                    Select project
-                  </button>
-                </Link>
-              </div>
+              <Link href={`/gallarydetail/[id]`}
+                as={`/gallarydetail/${project.id}`}
+                passHref>
+                <Image
+                  src={project.image.src}
+                  alt={project.title} // Ensure this is descriptive
+                  className="w-full h-[20rem] mt-3 object-cover"
+                  width={project.image.width}
+                  height={project.image.height}
+                />
+                <h3 className="text-white text-xl font-semibold mt-3">
+                  {project.title}
+                </h3>
+                <p className="text-gray-300 mt-2">{project.description}</p>
+                <div className="mt-4 flex justify-between items-center">
+                  <span className="text-sm text-gray-300">{project.tech}</span>
+                  <span className="text-sm text-gray-300">{project.design}</span>
+                  <Link href={""}>
+                    <button className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-full">
+                      Select project
+                    </button>
+                  </Link>
+                </div>
+              </Link>
             </div>
           </div>
         ))}

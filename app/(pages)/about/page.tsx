@@ -1,10 +1,11 @@
 import React from 'react'
-import Slider from './slider'
+import AboutPage from './about-us'
 
-function page() {
+const page = () => {
   return (
-    <div>about</div>
-  
+    <div>
+      <AboutPage />
+    </div>
   )
 }
 

@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import ShimmerButton from "@/components/magicui/shimmer-button";
 import slides from "@/data/project"; // Adjust the import path as needed
+import Link from 'next/link';
 
 const Portfolio = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -101,7 +102,7 @@ const Portfolio = () => {
                 </motion.div>
             </div>
 
-            <div className='mb-5 flex justify-end'>
+            <Link href={"/work"} className='mb-5 flex justify-end'>
                 <ShimmerButton
                     onClick={handleLearnMoreClick}
                     className="shadow-2xl"
@@ -110,7 +111,7 @@ const Portfolio = () => {
                         Explore More
                     </span>
                 </ShimmerButton>
-            </div>
+            </Link>
 
         </div>
     );

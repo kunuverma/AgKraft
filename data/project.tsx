@@ -11,7 +11,7 @@ import img10 from "@/public/assest/web1.jpeg";
 
 export const Projectdata = [
   {
-    id: 1,
+    id: "1",
     title: "E-commerce Platform",
     description: "Build a fully functional e-commerce platform with Next.js and Tailwind CSS.",
     image: img1,
@@ -21,7 +21,7 @@ export const Projectdata = [
     lightColor: "radial-gradient(circle, blue 0%, cyan 100%)",
   },
   {
-    id: 2,
+    id: "2",
     title: "Portfolio Website",
     description: "Showcase your work with a stunning portfolio site using React.",
     image: img2,
@@ -31,7 +31,7 @@ export const Projectdata = [
     lightColor: "radial-gradient(circle, red 0%, orange 100%)",// Unique gradient for each card
   },
   {
-    id: 3,
+    id: "3",
     title: "Blog Site",
     description: "Create a blogging platform to share your thoughts and ideas with the world.",
     image: img3,
@@ -41,7 +41,7 @@ export const Projectdata = [
     lightColor: "radial-gradient(circle, crimson 	 0%, coral 100%)", // Unique gradient for each card
   },
   {
-    id: 4,
+    id: "4",
     title: "Social Media App",
     description: "Develop a social media application with user authentication and real-time updates.",
     image: img4,
@@ -51,7 +51,7 @@ export const Projectdata = [
     lightColor: "radial-gradient(circle, hotpink 0%, darkmagenta 100%)",// Unique gradient for each card
   },
   {
-    id: 5,
+    id: "5",
     title: "Online Learning Platform",
     description: "Build an online learning platform to provide courses and tutorials.",
     image: img5,
@@ -61,7 +61,7 @@ export const Projectdata = [
     lightColor: "", // Unique gradient for each card
   },
   {
-    id: 6,
+    id: "6",
     title: "Fitness Tracker",
     description: "Create a fitness tracker application to monitor your workouts and diet.",
     image: img6,
@@ -71,7 +71,7 @@ export const Projectdata = [
     lightColor: "radial-gradient(circle, darkgray 0%, hotpink 100%)", // Unique gradient for each card
   },
   {
-    id: 7,
+    id: "7",
     title: "Recipe Finder",
     description: "Develop an application to find and save your favorite recipes.",
     image: img7,
@@ -81,7 +81,7 @@ export const Projectdata = [
     lightColor: "radial-gradient(circle, indigo 0%, lightskyblue 100%)", // Unique gradient for each card
   },
   {
-    id: 8,
+    id: "8",
     title: "Travel Blog",
     description: "Share your travel experiences and tips with a personal travel blog.",
     image: img8,
@@ -91,7 +91,7 @@ export const Projectdata = [
     lightColor: "radial-gradient(circle, mediumorchid 0%, magenta 100%)",// Unique gradient for each card
   },
   {
-    id: 9,
+    id: "9",
     title: "Event Management",
     description: "Create an event management application to organize and promote events.",
     image: img9,
@@ -101,7 +101,7 @@ export const Projectdata = [
     lightColor: "radial-gradient(circle, orange 0%, navajowhite 100%)", // Unique gradient for each card
   },
   {
-    id: 10,
+    id: "10",
     title: "Task Manager",
     description: "Develop a task manager app to help users organize and track their tasks.",
     image: img10,
@@ -114,7 +114,7 @@ export const Projectdata = [
 
 
 
-const slides = [
+ const slides = [
   {
       id: 1,
       image: '/assest/idcsite.png',

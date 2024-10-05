@@ -1,37 +1,30 @@
-export  const Navitems = [
-    {
-      name: "Gallery",
-      path: "/gallary",
-    },
-    {
-      name: "Events",
-      submenus: ["Latest Posts", "Trending", "Categories", "Archives"],
-    },
-    {
-      name: "About Us",
-      path: "/",
-      submenus: [
-        { name: "Our Mission", path: "/" },
-        { name: "Our Vision", path: "/" },
-        { name: "Why mAICourt?", path: "/" },
-        { name: "Contact Us", path: "/contact" },
+export const Navitems = [
+  {
+    name: "About Us",
+    path: "/about",
+  },
+  {
+    name: "Work",
+    path: "/work",
+  },
+  {
+    name: "Services",
+    submenus: [{ name: "Web Development", path: "/Web-Development" },
+    { name: "App Development", path: "/App-Development" },
+    { name: "Software Development", path: "/Software-Development" },
+    { name: "Digital Marketing", path: "/Digital-Marketing" },
+    { name: "IOS App Development", path: "/IOS-App-Development" },
+    { name: "UI/UX Design", path: "/UI-UX-Design" },
+    { name: "SEO", path: "/SEO" },
+    { name: "Social Media Marketing", path: "/Social-Media-Marketing" },
+    { name: "Ecommerce Development", path: "/Ecommerce-Development" },
+    ],
+  },
+  {
+    name: "Company",
+    submenus: [{ name: "Our Team", path: "/team" },
+      { name: "Careers", path: "/Career" },
+      { name: "Blog", path: "/Blog" },
       ],
-    },
-    {
-      name: "Contact Us",
-      path: "/contact",
-      submenus: [
-        { name: "Support", path: "/contact" },
-        { name: "FAQ", path: "/contact" },
-        { name: "Customer Service", path: "/contact" },
-        { name: "Reach Us", path: "/contact" },
-      ],
-    },
-    {
-      name: "Join Us",
-      submenus: [
-        { name: "LogIn", path: "/login" },
-        { name: "SignUp", path: "/register" },
-      ],
-    },
-  ];
+  },
+];
