@@ -39,7 +39,7 @@ const Portfolio = () => {
             <div className="flex flex-col justify-center items-center gap-4 mt-4">
                 <div className='flex items-center gap-2 sm:gap-3'>
                     <span className="text-white whitespace-pre-wrap text-left relative z-20 mt-2 bg-clip-text text-xl sm:text-2xl lg:text-4xl font-bold leading-none tracking-tighter text-transparent">
-                        Projects We've
+                        Projects We’ve
                     </span>
                     <span className='whitespace-pre-wrap text-left relative z-20 mt-2 bg-clip-text text-xl sm:text-2xl lg:text-4xl font-bold leading-none tracking-tighter text-transparent bg-gradient-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff]'>
                         Delivered
