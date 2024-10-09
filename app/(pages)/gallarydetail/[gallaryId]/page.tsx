@@ -2,6 +2,8 @@
 
 import { useParams } from "next/navigation";
 import { Projectdata } from "@/data/project";
+import { GalleryDet } from "@/app/(pages)/gallarydetail/[gallaryId]/Gallarydetail";
+import {Detail} from "@/app/(pages)/gallarydetail/[gallaryId]/Detail";
 
 import MehandiDetails from "@/app/(pages)/gallarydetail/components/mehandi";
 
@@ -21,8 +23,16 @@ const GalleryDetail = () => {
             return <div>Project not found</div>;
         } else {
             return (
-                <div className="h-screen">
-                    {gallarydetails.id === "1" && <MehandiDetails />}
+                <div className="">
+                   
+                    {/* {gallarydetails.id === "1" && <MehandiDetails />} */}
+                    
+                 <div className="z-20">
+                    <GalleryDet/>
+                    
+                 </div>
+                  
+                    
                 </div>
             )
         }

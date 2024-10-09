@@ -1,10 +1,9 @@
-
 'use client';
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import ShimmerButton from "@/components/magicui/shimmer-button";
-import slides from "@/data/project"; // Adjust the import path as needed
+import slides from "@/data/project"; 
 import Link from 'next/link';
 
 const Portfolio = () => {
@@ -26,89 +25,79 @@ const Portfolio = () => {
         }
     }, [isPaused]);
 
-    // const handleLearnMoreClick = () => {
-    //     window.location.href = slides[currentSlide].url;
-    // };
-
     return (
-        <div className='relative w-full flex flex-col justify-center items-center bg-[#191A1E] h-[40rem]'>
+        <div className='relative w-full flex flex-col justify-center items-center bg-[#191A1E]'>
             {/* Spotlight background */}
-            <div className="absolute  inset-0 bg-gradient-to-r from-transparent via-[#4B2A08] to-transparent animate-spotlight"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#4B2A08] to-transparent animate-spotlight"></div>
 
             {/* Projects We've Delivered */}
-            <div className="flex flex-col justify-center items-center gap-4 mt-4">
-                <div className='flex items-center gap-2 sm:gap-3'>
-                    <span className="text-white whitespace-pre-wrap text-left relative z-20 mt-2 bg-clip-text text-xl sm:text-2xl lg:text-4xl font-bold leading-none tracking-tighter text-transparent">
-                        Projects We’ve
+            <div className="flex flex-col justify-center items-center gap-2 sm:gap-3 mt-2 sm:mt-4">
+                <div className='flex items-center gap-1 sm:gap-2'>
+                    <span className="text-white whitespace-pre-wrap text-left relative z-20 mt-1 sm:mt-2 bg-clip-text text-xl sm:text-2xl lg:text-4xl font-bold leading-none tracking-tighter text-transparent">
+                        Projects We've
                     </span>
-                    <span className='whitespace-pre-wrap text-left relative z-20 mt-2 bg-clip-text text-xl sm:text-2xl lg:text-4xl font-bold leading-none tracking-tighter text-transparent bg-gradient-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff]'>
+                    <span className='whitespace-pre-wrap text-left relative z-20 mt-1 sm:mt-2 bg-clip-text text-xl sm:text-2xl lg:text-4xl font-bold leading-none tracking-tighter text-transparent bg-gradient-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff]'>
                         Delivered
                     </span>
                 </div>
-                <h1 className='text-white text-lg font-normal text-center leading-none tracking-wide text-transparent z-20'>At AGKraft, our projects reflect our passion for excellence and our ability to bring visions to life.</h1>
+                <h1 className='text-white text-sm sm:text-lg font-normal text-center leading-none tracking-wide z-20 mt-1 sm:mt-2'>
+                    At AGKraft, our projects reflect our passion for excellence and our ability to bring visions to life.
+                </h1>
             </div>
 
             <div
-                className="relative w-full lg:h-screen h-[42rem] "
+                className="relative w-full mt-2 sm:mt-4"
                 onMouseEnter={() => setIsPaused(true)}
-                onMouseLeave={() => setIsPaused(false)} >
+                onMouseLeave={() => setIsPaused(false)}>
                 <motion.div
                     className="absolute inset-0 flex items-center justify-center bg-transparent"
                     key={currentSlide}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: 1 }}
-                >
+                    transition={{ duration: 1 }}>
                     <div className="relative w-[90%] flex justify-center">
                         {/* Left Arrow Button */}
                         <button
                             className="absolute hidden md:block left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-[#ff5c33] p-2 rounded-full"
-                            onClick={goToPreviousSlide}
-                        >
+                            onClick={goToPreviousSlide}>
                             &#9664;
                         </button>
 
                         {/* Right Arrow Button */}
                         <button
                             className="absolute hidden md:block right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-[#ff5e36] p-2 rounded-full"
-                            onClick={goToNextSlide}
-                        >
+                            onClick={goToNextSlide}>
                             &#9654;
                         </button>
 
-                        <div className="absolute inset-0 flex flex-col md:flex-row items-center justify-between p-4 mx-4 md:mx-10 text-center">
+                        <div className="absolute inset-0 flex flex-col md:flex-row items-center justify-center p-2 sm:p-4 mx-2 sm:mx-4 text-left md:text-center">
                             {/* Image Section */}
-                            <div className='mb-4 md:mb-0'>
+                            <div className='mb-2 sm:mb-4 md:mb-0'>
                                 <img
-                                    className="w-[500px] rounded-md"
+                                    className="w-full sm:w-[500px] rounded-md"
                                     src={slides[currentSlide].image}
                                     alt={slides[currentSlide].title}
                                 />
                             </div>
 
                             {/* Text Section */}
-                            <div className="p-6 w-full md:w-[45%]">
+                            <div className="p-4 sm:p-6 w-full md:w-[45%]">
                                 {/* Hide title and description on mobile */}
-                                <h2 className="text-xl md:text-4xl font-bold mb-2 text-white hidden md:block">
+                                <h2 className="text-lg sm:text-xl md:text-4xl font-bold mb-2 text-white hidden md:block">
                                     {slides[currentSlide].title}
                                 </h2>
-                                <p className="mb-4 text-lg md:text-base text-white hidden md:block">
+                                <p className="mb-4 text-sm sm:text-base md:text-lg text-white hidden md:block">
                                     {slides[currentSlide].description}
                                 </p>
                             </div>
                         </div>
-
                     </div>
-
                 </motion.div>
             </div>
 
             <Link href={"/work"} className='mb-5 flex justify-end'>
-                <ShimmerButton
-                    // onClick={handleLearnMoreClick}
-                    className="shadow-2xl"
-                >
+                <ShimmerButton className="shadow-2xl">
                     <span className="whitespace-pre-wrap text-center text-sm md:text-lg font-medium leading-none tracking-tight text-white">
                         Explore More
                     </span>
