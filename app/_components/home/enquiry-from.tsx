@@ -2,8 +2,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import Image from 'next/image';
-import contact from "@/public/assest/CONTACT US.gif";
-// Replace with the new image path
+import contact from "@/public/assest/CONTACT US.gif";  // Ensure this path is correct
 
 interface FormData {
     firstName: string;
@@ -26,6 +25,8 @@ const schema = yup.object().shape({
         .required('Phone number is required'),
     services: yup.string().required('Please select a service'),
     message: yup.string().required('Message is required'),
+    // country: yup.string().required('Country is required'),
+    // city: yup.string().required('City is required'),
 });
 
 const EnquiryForm = () => {
@@ -34,7 +35,7 @@ const EnquiryForm = () => {
     });
 
     const onSubmit = (data: FormData) => {
-        console.log(data);
+        console.log('Form Submitted:', data);
     };
 
     return (
@@ -51,7 +52,7 @@ const EnquiryForm = () => {
                 <div className='hidden md:block rounded-xl'>
                     <Image
                         className="w-[450px] h-[450px] rounded-xl"
-                        src={contact} // Replacing with the new image
+                        src={contact} // Ensure the image path is correct
                         alt="Contact Us Graphic"
                     />
                 </div>
@@ -102,16 +103,18 @@ const EnquiryForm = () => {
                         <div>
                             <input
                                 {...register('country')}
-                                className="block w-full px-4 py-3 bg-transparent border-b border-gray-600 focus:outline-none"
-                                placeholder="Country (Optional)"
+                                className={`block w-full px-4 py-3 bg-transparent border-b ${errors.country ? 'border-red-500' : ' border-gray-600'} focus:outline-none`}
+                                placeholder="Country"
                             />
+                            {/* {errors.country && <span className="text-red-500 text-sm">{errors.country.message}</span>} */}
                         </div>
                         <div>
                             <input
                                 {...register('city')}
-                                className="block w-full px-4 py-3 bg-transparent border-b border-gray-600 focus:outline-none"
-                                placeholder="City (Optional)"
+                                className={`block w-full px-4 py-3 bg-transparent border-b ${errors.city ? 'border-red-500' : ' border-gray-600'} focus:outline-none`}
+                                placeholder="City"
                             />
+                            {/* {errors.city && <span className="text-red-500 text-sm">{errors.city.message}</span>} */}
                         </div>
                     </div>
 
@@ -132,7 +135,6 @@ const EnquiryForm = () => {
                     </button>
                 </form>
             </div>
-
         </div>
     );
 };
