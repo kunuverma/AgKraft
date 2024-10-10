@@ -21,22 +21,28 @@ const AboutPage: React.FC = () => {
     Autoplay({ delay: 2000, stopOnInteraction: true })
   )
   return (
-    <div className="bg-[#191A1E] relative w-full min-h-screen flex justify-center items-center">
+    <div className="bg-[#191A1E] relative w-full min-h-screen flex justify-center items-center ">
       {/* Spotlight background */}
       <div className="absolute  inset-0 bg-gradient-to-r from-transparent via-[#923702] to-transparent animate-spotlight z-0"></div>
       <div className="flex flex-col h-full gap-8 w-full max-w-[1440px] z-30">
 
-        {/* About Company */}
-        <div className="flex flex-col justify-center items-center">
-          <div className=" bg-transparent flex flex-col justify-center items-center w-full sm:w-[90%] md:w-[70%] lg:w-[60rem] p-4 sm:p-6 md:p-8 relative overflow-hidden rounded-xl mt-4 flex-grow">
-            <h1 className='text-3xl sm:text-4xl font-bold text-white'>
+
+              {/* Hero Section */}
+      <section
+        className="relative h-[200px] bg-cover bg-center"
+        style={{ backgroundImage: "url(/assest/WORK.jpg)" }}
+      >
+        <div className="absolute inset-0 bg-black opacity-70"></div>
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
+        <h1 className='text-3xl sm:text-4xl font-bold text-white'>
               Strategic Software Design
             </h1>
             <p className="text-center text-gray-100 dark:text-gray-400 tracking-wide mt-4">
               Our team builds solutions that are not only innovative but also strategically crafted.
             </p>
-          </div>
         </div>
+      </section>
+      
 
         {/* About Company */}
         <div className="flex flex-col justify-center items-center">
@@ -100,18 +106,18 @@ const AboutPage: React.FC = () => {
 
         {/* Questions */}
         <div className='flex flex-col justify-center items-center'>
-          <div className='flex justify-between w-[93%]'>
+          <div className='flex lg:flex-row flex-col justify-between w-[93%]'>
             <div className='flex flex-col'>
               <h1 className="mb-4 text-xl sm:text-2xl font-bold tracking-wide leading-none text-white text-center sm:text-left">
                 Common Queries Solved
               </h1>
-              <p className="mb-6 text-sm sm:text-base font-normal text-gray-100 text-center sm:text-left">
+              <p className="mb-6 lg:w-[60%]  text-left text-sm sm:text-base font-normal text-gray-100  sm:text-left">
                 Get the answers to your pressing questions with our visual FAQ. We aim to make your project journey smoother and more transparent.
               </p>
             </div>
-            <Link href={"/faq"} className=''>
+            <Link href={"/faq"} className=' flex justify-center lg:mb-0 mb-4'>
               <ShimmerButton
-                className="shadow-2xl"
+                className="shadow-xl lg:w-[10rem] lg:h-[3.5rem] "
               >
                 <span className="whitespace-pre-wrap text-center text-sm md:text-lg font-medium leading-none tracking-tight text-white">
                   Get Answers
@@ -119,7 +125,7 @@ const AboutPage: React.FC = () => {
               </ShimmerButton>
             </Link>
           </div>
-          <div className="flex justify-center sm:justify-start">
+          <div className="flex justify-center mb-10 sm:justify-start">
             <img
               className="w-full max-w-xs sm:max-w-sm  lg:max-w-[900px] rounded-md object-cover"
               src={question.src}

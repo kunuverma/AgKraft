@@ -1,14 +1,12 @@
 import React from 'react';
-import { FaFacebook, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaYoutube, FaLinkedin } from 'react-icons/fa';
 import Image from 'next/image';
-import logo from "@/public/assest/logo.png"
-import { FaLocationDot } from "react-icons/fa6";
-import { FaPhone } from "react-icons/fa6";
+import logo from "@/public/assest/logo.png";
+import { FaLocationDot, FaPhone } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 
 const Footer: React.FC = () => {
-  // Define the logo color as orange-red
-  const logoColor = '#FF5733'; // Change this to match the exact color from the logo
+  const logoColor = '#FF5733'; // Define the logo color as orange-red
 
   return (
     <footer className="bg-[#121C2D] text-gray-400 py-10 px-4">
@@ -20,13 +18,14 @@ const Footer: React.FC = () => {
             <Image src={logo} alt="AGKraft Logo" width={80} height={80} />
             <h2 className="text-white font-bold text-2xl">AGKRAFT</h2>
           </div>
-          <p className="text-gray-400 mb-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.
+          <p className="text-gray-300 mb-4">
+          Expertly crafting custom websites to elevate your offline business online. Let us build the perfect website for you.
           </p>
           <div className="flex space-x-4 text-2xl">
-            <FaFacebook className="cursor-pointer hover:text-orange-400" style={{ color: logoColor }} />
-            <FaTwitter className="cursor-pointer hover:text-orange-400" style={{ color: logoColor }} />
-            <FaYoutube className="cursor-pointer hover:text-orange-400" style={{ color: logoColor }} />
+            <FaFacebook className="cursor-pointer hover:text-[#356dc0] text-white" />
+            <FaTwitter className="cursor-pointer hover:text-[#47ccdd] text-white"  />
+            <FaYoutube className="cursor-pointer hover:text-[#fd5151] text-white"  />
+            <FaLinkedin className="cursor-pointer hover:text-[#4e8ae6] text-white"  />
           </div>
         </div>
 
@@ -46,16 +45,17 @@ const Footer: React.FC = () => {
           <h3 className="text-white font-bold mb-4">Get In Touch</h3>
           <ul className="space-y-4">
             <li className='flex items-center gap-2'>
-              <span className="text-orange-500 text-xl"><FaLocationDot /></span> 2443 Oak Ridge Omaha, QA 45065
+              <span className="text-[#f76329] text-xl"><FaLocationDot /></span> Pitampura, North-West Delhi, New Delhi, 110081
             </li>
             <li className='flex items-center gap-2'>
-              <span className="text-orange-500 text-xl"><FaPhone /></span> 9262975957
+              <span className="text-[#f76329] text-xl"><FaPhone /></span> 
+              <a href="tel:9262975957" className="hover:text-orange-500">9262975957</a>
             </li>
-            {/* <li>
-              <span className="text-orange-500">📱</span> 082-245-7253
-            </li> */}
             <li className='flex items-center gap-2'>
-              <span className="text-orange-500 text-xl"><MdEmail /></span> agkraft@gmail.com
+              <span className="text-[#f76329] text-xl"><MdEmail /></span> 
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=agkraft01@gmail.com" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500">
+                agkraft01@gmail.com
+              </a>
             </li>
           </ul>
         </div>

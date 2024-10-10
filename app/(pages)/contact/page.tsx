@@ -56,9 +56,8 @@ const EnquiryForm = () => {
         <div>
           <input
             {...register("firstName")}
-            className={`block w-full px-4 py-3 bg-transparent border-b ${
-              errors.firstName ? "border-red-500" : "border-gray-600"
-            } focus:outline-none`}
+            className={`block w-full px-4 py-3 bg-transparent border-b ${errors.firstName ? "border-red-500" : "border-gray-600"
+              } focus:outline-none`}
             placeholder="First Name"
           />
           {errors.firstName && (
@@ -70,9 +69,8 @@ const EnquiryForm = () => {
         <div>
           <input
             {...register("lastName")}
-            className={`block w-full px-4 py-3 bg-transparent border-b ${
-              errors.lastName ? "border-red-500" : "border-gray-600"
-            } focus:outline-none`}
+            className={`block w-full px-4 py-3 bg-transparent border-b ${errors.lastName ? "border-red-500" : "border-gray-600"
+              } focus:outline-none`}
             placeholder="Last Name"
           />
           {errors.lastName && (
@@ -87,9 +85,8 @@ const EnquiryForm = () => {
       <div className="mb-6">
         <input
           {...register("email")}
-          className={`block w-full px-4 py-3 bg-transparent border-b ${
-            errors.email ? "border-red-500" : "border-gray-600"
-          } focus:outline-none`}
+          className={`block w-full px-4 py-3 bg-transparent border-b ${errors.email ? "border-red-500" : "border-gray-600"
+            } focus:outline-none`}
           placeholder="Email"
         />
         {errors.email && (
@@ -101,9 +98,8 @@ const EnquiryForm = () => {
       <div className="mb-6">
         <input
           {...register("phone")}
-          className={`block w-full px-4 py-3 bg-transparent border-b ${
-            errors.phone ? "border-red-500" : "border-gray-600"
-          } focus:outline-none`}
+          className={`block w-full px-4 py-3 bg-transparent border-b ${errors.phone ? "border-red-500" : "border-gray-600"
+            } focus:outline-none`}
           placeholder="Phone Number"
         />
         {errors.phone && (
@@ -161,8 +157,8 @@ const ContactUsPage = () => {
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
           <h1 className="text-5xl font-bold text-[#FE523C]">Contact Us</h1>
           <p className="lg:mt-4 mt-6 text-xl lg:w-[50%] lg:text-center text-left lg:px-0 px-5 font-semibold text-gray-200">
-          We create professional websites tailored for businesses and individuals, offering custom designs,
-            
+            We create professional websites tailored for businesses and individuals, offering custom designs,
+
             advanced features, and seamless functionality.
           </p>
         </div>
@@ -171,21 +167,21 @@ const ContactUsPage = () => {
       {/* Contact Form Section */}
       <section className="py-16 bg-transparent">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row gap-10">
+          <div className="flex flex-col-reverse lg:flex-row lg:flex-row-reverse gap-10">
             {/* Office Information */}
             <div className="lg:w-1/2 bg-gradient-to-r from-[#FE523C] to-[#FE864A] text-white p-8 rounded-l-xl shadow-lg">
               <h2 className="text-3xl font-bold mb-6">Our Office</h2>
               <p className="mb-4">
                 <FaBuilding className="text-white text-4xl mr-2" />
-                GL-7, Ashoka Estate Cannaught Place, New Delhi, India
+                Pitampura, North-West Delhi, New Delhi, 110081
               </p>
               <p className="mb-4">
                 <FaPhoneAlt className="text-white text-4xl mr-2" />
-                Phone: +91 77195-58184
+                Phone: +91 9876543210
               </p>
               <p className="mb-4">
                 <FaEnvelope className="text-white text-4xl mr-2" />
-                Email: support@nivaran.com
+                Email: agkraft01@gmail.com
               </p>
               <p className="mb-4">24/7 Available</p>
 
@@ -199,13 +195,13 @@ const ContactUsPage = () => {
                   },
                   {
                     icon: FaBalanceScale,
-                    title: "Government Inquiries",
-                    text: "For government-related legal queries.",
+                    title: "Any Queries about website",
+                    text: "For any queries related to the website.",
                   },
                   {
                     icon: FaUsers,
-                    title: "Nivaran Platform",
-                    text: "Questions about the Nivaran platform and services.",
+                    title: "AGKraft Services",
+                    text: "For any queries related to the website.",
                   },
                 ].map(({ icon: Icon, title, text }, index) => (
                   <div key={index} className="flex items-center">
@@ -220,7 +216,7 @@ const ContactUsPage = () => {
             </div>
 
             {/* Enquiry Form */}
-            <div className="lg:w-1/2  p-8 rounded-lg shadow-lg ">
+            <div className="lg:w-1/2 p-8 rounded-lg shadow-lg">
               <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-[#FE523C] to-[#ee6755] bg-clip-text text-transparent">
                 Get in Touch
               </h2>
@@ -229,6 +225,7 @@ const ContactUsPage = () => {
           </div>
         </div>
       </section>
+
     </div>
   );
 };
