@@ -23,7 +23,7 @@ const AboutPage: React.FC = () => {
   return (
     <div className="bg-[#191A1E] relative w-full min-h-screen flex justify-center items-center">
       {/* Spotlight background */}
-      <div className="absolute  inset-0 bg-gradient-to-r from-transparent via-[#083148] to-transparent animate-spotlight z-0"></div>
+      <div className="absolute  inset-0 bg-gradient-to-r from-transparent via-[#923702] to-transparent animate-spotlight z-0"></div>
       <div className="flex flex-col h-full gap-8 w-full max-w-[1440px] z-30">
 
         {/* About Company */}

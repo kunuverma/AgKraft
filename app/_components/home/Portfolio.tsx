@@ -32,14 +32,14 @@ const Portfolio: React.FC = () => {
 
     return (
         <div className="relative w-full flex flex-col gap-y-6 justify-center items-center bg-[#191A1E] md:mt-[5rem]">
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#61350250] to-transparent animate-spotlight"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#f1571050] to-transparent animate-spotlight"></div>
             {/* Projects Header */}
             <div className="flex flex-col justify-center items-center gap-4 mt-8">
                 <div className='flex items-center gap-2 sm:gap-3'>
                     <span className="text-white text-xl sm:text-2xl lg:text-4xl font-bold leading-none tracking-tighter">
                         Projects We've
                     </span>
-                    <span className='bg-gradient-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff] bg-clip-text text-transparent text-xl sm:text-2xl lg:text-4xl font-bold leading-none tracking-tighter'>
+                    <span className='bg-gradient-to-b from-[#f77a40] via-[#ff2975] to-[#8c1eff] bg-clip-text text-transparent text-xl sm:text-2xl lg:text-4xl font-bold leading-none tracking-tighter'>
                         Delivered
                     </span>
                 </div>

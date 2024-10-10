@@ -50,7 +50,7 @@ const EnquiryForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="p-8 w-full max-w-lg bg-[#1B1C20] text-white rounded-lg shadow-md"
+      className="p-8 w-full max-w-lg bg-[#1B1C20] text-white rounded-lg "
     >
       <div className="grid grid-cols-2 gap-10 mb-6">
         <div>
@@ -117,14 +117,14 @@ const EnquiryForm = () => {
           <input
             {...register("country")}
             className="block w-full px-4 py-3 bg-transparent border-b border-gray-600 focus:outline-none"
-            placeholder="Country (Optional)"
+            placeholder="Country "
           />
         </div>
         <div>
           <input
             {...register("city")}
             className="block w-full px-4 py-3 bg-transparent border-b border-gray-600 focus:outline-none"
-            placeholder="City (Optional)"
+            placeholder="City "
           />
         </div>
       </div>
@@ -169,11 +169,11 @@ const ContactUsPage = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-16 bg-[#202125]">
+      <section className="py-16 bg-transparent">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-10">
             {/* Office Information */}
-            <div className="lg:w-1/2 bg-gradient-to-r from-[#FE523C] to-[#FE864A] text-white p-8 rounded-lg shadow-lg">
+            <div className="lg:w-1/2 bg-gradient-to-r from-[#FE523C] to-[#FE864A] text-white p-8 rounded-l-xl shadow-lg">
               <h2 className="text-3xl font-bold mb-6">Our Office</h2>
               <p className="mb-4">
                 <FaBuilding className="text-white text-4xl mr-2" />
