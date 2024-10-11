@@ -13,7 +13,7 @@ export default function RootLayout({
   const pathname = usePathname();
 
   return (
-    <div>
+    <div >
       {/* Show Nav only on the home page */}
       {pathname === '/' ? <NavbarHome /> : <Nav />}
       

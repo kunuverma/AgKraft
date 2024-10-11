@@ -7,13 +7,13 @@ const Feature = () => {
             <div className="max-w-screen-xl">
                 {/* Heading */}
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
-                    Experience the future of <span className="text-pink-500">software development</span> with Development Tools Hub.
+                    Experience the future of <span className="bg-gradient-to-r from-[#f84012]  to-[#f35831] bg-clip-text text-transparent">software development</span> with Development Tools Hub.
                 </h1>
                 {/* Call to Action Button */}
                 <div className="mt-8">
                     <a
                         href="#"
-                        className="inline-block px-8 py-4 bg-pink-600 text-white font-bold rounded-full transition-all duration-300 hover:bg-white hover:text-black"
+                        className="inline-block px-8 py-4 bg-gradient-to-r from-[#f84012] to-[#f35831]  hover:bg-gradient-to-r hover:from-[#ffb6a3] hover:to-[#f3d1c8]  hover:border-2 hover:border-[#f84012] text-white font-bold rounded-full transition-all duration-300 hover:bg-white hover:text-black"
                     >
                         Sign up for free <span className="inline-block ml-2">→</span>
                     </a>

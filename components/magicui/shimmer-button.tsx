@@ -1,5 +1,4 @@
-import React, { CSSProperties } from "react";
-
+import React, { CSSProperties, useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 export interface ShimmerButtonProps
@@ -19,39 +18,83 @@ const ShimmerButton = React.forwardRef<HTMLButtonElement, ShimmerButtonProps>(
       shimmerColor = "#ffffff",
       shimmerSize = "0.05em",
       shimmerDuration = "3s",
-      borderRadius = "100px",
-      background = "#0D6889",
+      borderRadius = "18px",
+      background = "linear-gradient(to right, #FF563D, #FF9A56)",
       className,
       children,
       ...props
     },
-    ref,
+    ref
   ) => {
+    const buttonRef = useRef<HTMLButtonElement>(null);
+    const [isHovered, setIsHovered] = useState(false);
+    const [offset, setOffset] = useState({ x: 0, y: 0 });
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (buttonRef.current) {
+        const rect = buttonRef.current.getBoundingClientRect();
+        const buttonCenterX = rect.left + rect.width / 2;
+        const buttonCenterY = rect.top + rect.height / 2;
+
+        const distanceX = e.clientX - buttonCenterX;
+        const distanceY = e.clientY - buttonCenterY;
+        const distance = Math.sqrt(distanceX ** 2 + distanceY ** 2);
+
+        // Calculate the offset based on distance
+        const maxOffset = 20; // Maximum offset in pixels
+        const scale = Math.min(distance / 100, 1); // Adjust the scale based on distance
+        setOffset({
+          x: Math.sign(distanceX) * (maxOffset * (1 - scale)),
+          y: Math.sign(distanceY) * (maxOffset * (1 - scale)),
+        });
+      }
+    };
+
+    const handleMouseEnter = () => {
+      setIsHovered(true);
+      window.addEventListener("mousemove", handleMouseMove);
+    };
+
+    const handleMouseLeave = () => {
+      setIsHovered(false);
+      setOffset({ x: 0, y: 0 });
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+
+    useEffect(() => {
+      return () => {
+        window.removeEventListener("mousemove", handleMouseMove);
+      };
+    }, []);
+
     return (
       <button
-        style={
-          {
-            "--spread": "90deg",
-            "--shimmer-color": shimmerColor,
-            "--radius": borderRadius,
-            "--speed": shimmerDuration,
-            "--cut": shimmerSize,
-            "--bg": background,
-          } as CSSProperties
-        }
+        ref={buttonRef}
+        style={{
+          "--spread": "90deg",
+          "--shimmer-color": shimmerColor,
+          "--radius": borderRadius,
+          "--speed": shimmerDuration,
+          "--cut": shimmerSize,
+          "--bg": background,
+          transform: `translate(${offset.x}px, ${offset.y}px)`,
+          transition: "transform 0.3s ease, background 0.3s ease, border 0.3s ease", // Smooth transitions
+        } as CSSProperties}
         className={cn(
           "group relative z-0 flex cursor-pointer items-center justify-center overflow-hidden whitespace-nowrap border border-white/10 px-6 py-3 text-white [background:var(--bg)] [border-radius:var(--radius)] dark:text-[#24252B]",
           "transform-gpu transition-transform duration-300 ease-in-out active:translate-y-[1px]",
-          className,
+          isHovered ? "bg-white border-orange-500" : "",
+          className
         )}
-        ref={ref}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         {...props}
       >
         {/* spark container */}
         <div
           className={cn(
             "-z-30 blur-[2px]",
-            "absolute inset-0 overflow-visible [container-type:size]",
+            "absolute inset-0 overflow-visible [container-type:size]"
           )}
         >
           {/* spark */}
@@ -66,29 +109,22 @@ const ShimmerButton = React.forwardRef<HTMLButtonElement, ShimmerButtonProps>(
         <div
           className={cn(
             "insert-0 absolute h-full w-full",
-
             "rounded-2xl px-4 py-1.5 text-sm font-medium shadow-[inset_0_-8px_10px_#ffffff1f]",
-
-            // transition
             "transform-gpu transition-all duration-300 ease-in-out",
-
-            // on hover
             "group-hover:shadow-[inset_0_-6px_10px_#ffffff3f]",
-
-            // on click
-            "group-active:shadow-[inset_0_-10px_10px_#ffffff3f]",
+            "group-active:shadow-[inset_0_-10px_10px_#ffffff3f]"
           )}
         />
 
         {/* backdrop */}
         <div
           className={cn(
-            "absolute -z-20 [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]",
+            "absolute -z-20 [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]"
           )}
         />
       </button>
     );
-  },
+  }
 );
 
 ShimmerButton.displayName = "ShimmerButton";

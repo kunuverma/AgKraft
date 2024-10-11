@@ -6,7 +6,7 @@ export const About = () => {
     return (
         <CardSpotlight className="relative flex flex-col sm:flex-row items-center justify-center mx-5 sm:mx-10 my-5 gap-9 shadow-[0px_0px_5px_0px_#f7fafc] overflow-hidden">
             {/* Spotlight effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#1f528550] to-transparent animate-spotlight"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#f1571050] to-transparent animate-spotlight"></div>
 
             {/* Text Section */}
             <div className='flex flex-col w-full sm:w-[40%] text-left gap-y-5 z-40'>
@@ -23,7 +23,7 @@ export const About = () => {
                 </span>
 
                 <div className=' mt-6 hidden md:block'>
-                    <ShimmerButton className="shadow-2xl">
+                    <ShimmerButton className="shadow-2xl ">
                         <span className="whitespace-pre-wrap text-center text-sm md:text-lg font-medium leading-none tracking-tight text-white">
                             Explore More
                         </span>
