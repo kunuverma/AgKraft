@@ -50,7 +50,7 @@ const EnquiryForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="p-8 w-full max-w-lg bg-[#1B1C20] text-white rounded-lg "
+      className="p-8 w-full max-w-2xl bg-[#1B1C20] text-white rounded-lg shadow-[0px_0px_7px_2px_#a0aec0]"
     >
       <div className="grid grid-cols-2 gap-10 mb-6">
         <div>
@@ -165,30 +165,40 @@ const ContactUsPage = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-16 bg-transparent">
+      <section className="py-4 bg-transparent ">
         <div className="container mx-auto px-4">
           <div className="flex flex-col-reverse lg:flex-row lg:flex-row-reverse gap-10">
             {/* Office Information */}
-            <div className="relative lg:w-1/2  text-white p-8 rounded-l-xl shadow-lg">
+            <div className="relative lg:w-1/2 ml-[5rem]  text-white p-8 rounded-l-xl mt-10 shadow-lg">
+            
            
-             <div className="z-50">
-             <h2 className="text-3xl font-bold mb-6 ">Our Office</h2>
-              <p className="mb-4">
+             <div className="z-50 flex flex-col gap-y-5">
+             <div className="relative p-6 shadow-[0px_0px_7px_2px_#a0aec0]">
+              {/* Spotlight background */}
+      <div className="absolute  inset-0 bg-gradient-to-r from-transparent via-[#054563] to-[#054563] animate-spotlight z-0"></div>
+            <div className="relative z-10">
+            <h2 className="text-2xl font-bold mb-6 ">Our Office</h2>
+              <p className="mb-4 flex flex-row">
                 <FaBuilding className="text-white text-2xl mr-2" />
                 Pitampura, North-West Delhi, New Delhi, 110081
               </p>
-              <p className="mb-4">
-                <FaPhoneAlt className="text-white text-4xl mr-2" />
+              <p className="mb-4 flex flex-row">
+                <FaPhoneAlt className="text-white text-2xl mr-2" />
                 Phone: +91 9876543210
               </p>
-              <p className="mb-4">
-                <FaEnvelope className="text-white text-4xl mr-2" />
+              <p className="mb-4 flex flex-row">
+                <FaEnvelope className="text-white text-2xl mr-2" />
                 Email: agkraft01@gmail.com
               </p>
-              <p className="mb-4">24/7 Available</p>
+              <p className="mb-4 text-xl">24/7 Available</p>
+            </div>
 
+             </div>
               {/* Inquiry Sections */}
-              <div className="space-y-6">
+              <div className=" relative space-y-6  p-4 shadow-[0px_0px_7px_2px_#a0aec0]">
+                      {/* Spotlight background */}
+      <div className="absolute  inset-0 bg-gradient-to-r from-transparent via-[#054563] to-[#054563] animate-spotlight z-0"></div>
+                <div className="z-50 relative">
                 {[
                   {
                     icon: FaUser,
@@ -206,20 +216,21 @@ const ContactUsPage = () => {
                     text: "For any queries related to the website.",
                   },
                 ].map(({ icon: Icon, title, text }, index) => (
-                  <div key={index} className="flex items-center">
-                    <Icon className="text-white text-3xl mr-4" />
+                  <div key={index} className="flex items-center mt-3 ">
+                    <Icon className="text-white text-2xl mr-4" />
                     <div>
                       <h3 className="text-xl font-bold">{title}</h3>
                       <p>{text}</p>
                     </div>
                   </div>
                 ))}
+                </div>
               </div>
              </div>
             </div>
 
             {/* Enquiry Form */}
-            <div className="lg:w-1/2 p-8 rounded-lg shadow-lg">
+            <div className="lg:w-[70%] p-8 rounded-lg shadow-lg">
               <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-[#FE523C] to-[#ee6755] bg-clip-text text-transparent">
                 Get in Touch
               </h2>
