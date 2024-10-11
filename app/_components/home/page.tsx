@@ -1,6 +1,6 @@
 'use client';
 import {About} from "./about";
-import Cards from "./Cards";
+import Cards from "./cards";
 import EnquiryForm from "./enquiry-from";
 import Feature from "./feature";
 import Portfolio from "./portfolio";
