@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 
+
 const Slider: React.FC = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
 

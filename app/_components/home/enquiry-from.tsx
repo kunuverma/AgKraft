@@ -127,7 +127,7 @@ const EnquiryForm = () => {
                     {/* Submit Button */}
                     <button
                         type="submit"
-                        className="w-full py-3 px-8 mt-6 rounded-md bg-blue-600 text-white font-bold transition duration-200 hover:bg-white hover:text-[#121C2D] border-2 border-transparent hover:border-[#FD3930]">
+                        className="w-full py-3  mt-6 rounded-md bg-gradient-to-r from-[#FD503A] to-[#FE8449] hover:bg-gradient-to-r hover:from-[#bd4636] hover:to-[#ff723a] text-white font-bold transition duration-200 hover:bg-white hover:text-[#ffffff] border-2 border-transparent hover:border-[#FD3930]">
                         ENQUIRY NOW
                     </button>
                 </form>

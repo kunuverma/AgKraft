@@ -1,12 +1,12 @@
 'use client';
-import * as React from "react";
+import React from 'react';
 import {About} from "./about";
-import Cards from "./Cards";
+import Cards from "./cards";
 import EnquiryForm from "./enquiry-from";
 import Feature from "./feature";
 import Portfolio from "./Portfolio";
 import Reviews from "./reviews";
-import Slider from "@/app/_components/slider/slider";
+import Slider from "../slider/slider";
 
 const HomePage = () => {
   return (

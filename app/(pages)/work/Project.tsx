@@ -95,7 +95,7 @@ export const ThreeDCardDemo: React.FC = () => {
                   <span className="text-sm text-gray-300">{project.tech}</span>
                   <span className="text-sm text-gray-300">{project.design}</span>
                   <Link href={""}>
-                    <button className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-full">
+                    <button className="bg-gradient-to-r from-[#f84012] to-[#f35831] hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-full">
                       Select project
                     </button>
                   </Link>
