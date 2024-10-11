@@ -167,7 +167,7 @@ const ContactUsPage = () => {
       {/* Contact Form Section */}
       <section className="py-16 bg-transparent">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col-reverse lg:flex-row lg:flex-row-reverse gap-10">
+          <div className="flex flex-col-reverse lg:flex-row gap-10">
             {/* Office Information */}
             <div className="relative lg:w-1/2  text-white p-8 rounded-l-xl shadow-lg">
            
