@@ -1,120 +1,109 @@
-
-'use client';
-
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import ShimmerButton from "@/components/magicui/shimmer-button";
-import slides from "@/data/project"; // Adjust the import path as needed
+import slides from '../../../data/project'; // Make sure slides are defined with the proper structure
 import Link from 'next/link';
+import ShimmerButton from "../../../components/magicui/shimmer-button";
 
-const Portfolio = () => {
-    const [currentSlide, setCurrentSlide] = useState(0);
+interface Slide {
+    id: number;
+    image: string;
+    title: string;
+    description: string;
+    url: string;
+}
+
+const Portfolio: React.FC = () => {
+    const [currentIndex, setCurrentIndex] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
 
     const goToNextSlide = () => {
-        setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
     };
 
     const goToPreviousSlide = () => {
-        setCurrentSlide((prevSlide) => (prevSlide - 1 + slides.length) % slides.length);
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + slides.length) % slides.length);
     };
 
     useEffect(() => {
         if (!isPaused) {
-            const timer = setInterval(goToNextSlide, 1000);
+            const timer = setInterval(goToNextSlide, 3000); // Auto-slide every 3 seconds
             return () => clearInterval(timer);
         }
     }, [isPaused]);
 
-    // const handleLearnMoreClick = () => {
-    //     window.location.href = slides[currentSlide].url;
-    // };
-
     return (
-        <div className='relative w-full flex flex-col justify-center items-center bg-[#191A1E] h-[40rem]'>
-            {/* Spotlight background */}
-            <div className="absolute  inset-0 bg-gradient-to-r from-transparent via-[#4B2A08] to-transparent animate-spotlight"></div>
-
-            {/* Projects We've Delivered */}
-            <div className="flex flex-col justify-center items-center gap-4 mt-4">
+        <div className="relative w-full flex flex-col gap-y-6 justify-center items-center bg-[#191A1E] md:mt-[5rem]">
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#f1571050] to-transparent animate-spotlight"></div>
+            {/* Projects Header */}
+            <div className="flex flex-col justify-center items-center gap-4 mt-8">
                 <div className='flex items-center gap-2 sm:gap-3'>
-                    <span className="text-white whitespace-pre-wrap text-left relative z-20 mt-2 bg-clip-text text-xl sm:text-2xl lg:text-4xl font-bold leading-none tracking-tighter text-transparent">
+                    <span className="text-white text-xl sm:text-2xl lg:text-4xl font-bold leading-none tracking-tighter">
                         Projects We’ve
                     </span>
-                    <span className='whitespace-pre-wrap text-left relative z-20 mt-2 bg-clip-text text-xl sm:text-2xl lg:text-4xl font-bold leading-none tracking-tighter text-transparent bg-gradient-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff]'>
+                    <span className='bg-gradient-to-b from-[#f77a40] via-[#ff2975] to-[#8c1eff] bg-clip-text text-transparent text-xl sm:text-2xl lg:text-4xl font-bold leading-none tracking-tighter'>
                         Delivered
                     </span>
                 </div>
-                <h1 className='text-white text-lg font-normal text-center leading-none tracking-wide text-transparent z-20'>At AGKraft, our projects reflect our passion for excellence and our ability to bring visions to life.</h1>
+                <h1 className='text-white text-sm sm:text-lg text-center font-normal'>
+                    At AGKraft, our projects reflect our passion for excellence and our ability to bring visions to life.
+                </h1>
             </div>
 
+            {/* Carousel Section */}
             <div
-                className="relative w-full lg:h-screen h-[42rem] "
+                className="relative w-full lg:h-[32rem] h-[22rem] md:h-[23rem] overflow-hidden"
                 onMouseEnter={() => setIsPaused(true)}
-                onMouseLeave={() => setIsPaused(false)} >
-                <motion.div
-                    className="absolute inset-0 flex items-center justify-center bg-transparent"
-                    key={currentSlide}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 1 }}
+                onMouseLeave={() => setIsPaused(false)}
+            >
+                <div
+                    className="flex transition-transform duration-700 ease-in-out"
+                    style={{ transform: `translateX(-${currentIndex * 100}%)` }} // Slide movement logic
                 >
-                    <div className="relative w-[90%] flex justify-center">
-                        {/* Left Arrow Button */}
-                        <button
-                            className="absolute hidden md:block left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-[#ff5c33] p-2 rounded-full"
-                            onClick={goToPreviousSlide}
+                    {slides.map((slide: Slide, index) => (
+                        <div
+                            key={index}
+                            className="min-w-full flex flex-col sm:flex-row justify-between items-center px-4 lg:px-16"
                         >
-                            &#9664;
-                        </button>
-
-                        {/* Right Arrow Button */}
-                        <button
-                            className="absolute hidden md:block right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-[#ff5e36] p-2 rounded-full"
-                            onClick={goToNextSlide}
-                        >
-                            &#9654;
-                        </button>
-
-                        <div className="absolute inset-0 flex flex-col md:flex-row items-center justify-between p-4 mx-4 md:mx-10 text-center">
-                            {/* Image Section */}
-                            <div className='mb-4 md:mb-0'>
+                            {/* Left - Image */}
+                            <div className="w-full sm:w-1/2">
                                 <img
-                                    className="w-[500px] rounded-md"
-                                    src={slides[currentSlide].image}
-                                    alt={slides[currentSlide].title}
+                                    src={slide.image}
+                                    alt={slide.title}
+                                    className="w-full  lg:h-[30rem] h-[17rem] rounded-md"
                                 />
                             </div>
+                            {/* Right - Content */}
+                            <div className="w-full sm:w-1/2 flex flex-col justify-center p-4 text-left">
+                                <h2 className="text-white text-lg sm:text-xl md:text-4xl font-bold mb-4 hidden md:block">{slide.title}</h2>
+                                <p className="text-white text-sm sm:text-base mb-4 hidden md:block">{slide.description}</p>
 
-                            {/* Text Section */}
-                            <div className="p-6 w-full md:w-[45%]">
-                                {/* Hide title and description on mobile */}
-                                <h2 className="text-xl md:text-4xl font-bold mb-2 text-white hidden md:block">
-                                    {slides[currentSlide].title}
-                                </h2>
-                                <p className="mb-4 text-lg md:text-base text-white hidden md:block">
-                                    {slides[currentSlide].description}
-                                </p>
+                                <Link href={slide.url}>
+                                    <ShimmerButton className="shadow-2xl md:flex md:items-center md:justify-center">
+                                        <span className="whitespace-pre-wrap text-center text-sm md:text-lg font-medium leading-none tracking-tight text-white">
+                                            Learn More
+                                        </span>
+                                    </ShimmerButton>
+                                </Link>
                             </div>
                         </div>
+                    ))}
+                </div>
 
-                    </div>
-
-                </motion.div>
-            </div>
-
-            <Link href={"/work"} className='mb-5 flex justify-end'>
-                <ShimmerButton
-                    // onClick={handleLearnMoreClick}
-                    className="shadow-2xl"
+                {/* Left Arrow */}
+                <button
+                    className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full"
+                    onClick={goToPreviousSlide}
                 >
-                    <span className="whitespace-pre-wrap text-center text-sm md:text-lg font-medium leading-none tracking-tight text-white">
-                        Explore More
-                    </span>
-                </ShimmerButton>
-            </Link>
+                    &#9664;
+                </button>
 
+                {/* Right Arrow */}
+                <button
+                    className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full"
+                    onClick={goToNextSlide}
+                >
+                    &#9654;
+                </button>
+            </div>
         </div>
     );
 };
