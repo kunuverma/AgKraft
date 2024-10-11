@@ -154,7 +154,7 @@ const ContactUsPage = () => {
         style={{ backgroundImage: "url(/assest/company1.jpg)" }}
       >
         <div className="absolute inset-0 bg-black opacity-80"></div>
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
+        <div className="relative flex flex-col items-center justify-center h-full text-center text-white">
           <h1 className="text-5xl font-bold text-[#FE523C]">Contact Us</h1>
           <p className="lg:mt-4 mt-6 text-xl lg:w-[50%] lg:text-center text-left lg:px-0 px-5 font-semibold text-gray-200">
             We create professional websites tailored for businesses and individuals, offering custom designs,
@@ -169,10 +169,12 @@ const ContactUsPage = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col-reverse lg:flex-row lg:flex-row-reverse gap-10">
             {/* Office Information */}
-            <div className="lg:w-1/2 bg-gradient-to-r from-[#FE523C] to-[#FE864A] text-white p-8 rounded-l-xl shadow-lg">
-              <h2 className="text-3xl font-bold mb-6">Our Office</h2>
+            <div className="relative lg:w-1/2  text-white p-8 rounded-l-xl shadow-lg">
+           
+             <div className="z-50">
+             <h2 className="text-3xl font-bold mb-6 ">Our Office</h2>
               <p className="mb-4">
-                <FaBuilding className="text-white text-4xl mr-2" />
+                <FaBuilding className="text-white text-2xl mr-2" />
                 Pitampura, North-West Delhi, New Delhi, 110081
               </p>
               <p className="mb-4">
@@ -213,6 +215,7 @@ const ContactUsPage = () => {
                   </div>
                 ))}
               </div>
+             </div>
             </div>
 
             {/* Enquiry Form */}
