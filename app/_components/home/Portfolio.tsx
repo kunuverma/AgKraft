@@ -37,7 +37,7 @@ const Portfolio: React.FC = () => {
             <div className="flex flex-col justify-center items-center gap-4 mt-8">
                 <div className='flex items-center gap-2 sm:gap-3'>
                     <span className="text-white text-xl sm:text-2xl lg:text-4xl font-bold leading-none tracking-tighter">
-                        Projects We've
+                        Projects We’ve
                     </span>
                     <span className='bg-gradient-to-b from-[#f77a40] via-[#ff2975] to-[#8c1eff] bg-clip-text text-transparent text-xl sm:text-2xl lg:text-4xl font-bold leading-none tracking-tighter'>
                         Delivered
