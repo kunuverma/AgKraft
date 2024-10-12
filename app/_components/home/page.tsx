@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import {About} from "./about";
-import Cards from "./cards";
+import Cards from "./Cards";
 import EnquiryForm from "./enquiry-from";
 import Feature from "./feature";
 import Portfolio from "./Portfolio";

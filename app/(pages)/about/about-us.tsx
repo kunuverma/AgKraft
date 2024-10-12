@@ -23,26 +23,26 @@ const AboutPage: React.FC = () => {
   return (
     <div className="bg-[#191A1E] relative w-full min-h-screen flex justify-center items-center ">
       {/* Spotlight background */}
-      <div className="absolute  inset-0 bg-gradient-to-r from-transparent via-[#923702] to-transparent animate-spotlight z-0"></div>
+      <div className="absolute  inset-0 bg-gradient-to-r from-transparent via-[#3c1702] to-transparent animate-spotlight z-0"></div>
       <div className="flex flex-col h-full gap-8 w-full max-w-[1440px] z-30">
 
 
-              {/* Hero Section */}
-      <section
-        className="relative h-[200px] bg-cover bg-center"
-        style={{ backgroundImage: "url(/assest/WORK.jpg)" }}
-      >
-        <div className="absolute inset-0 bg-black opacity-70"></div>
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
-        <h1 className='text-3xl sm:text-4xl font-bold text-white'>
+        {/* Hero Section */}
+        <section
+          className="relative h-[200px] bg-cover bg-center rounded-md"
+          style={{ backgroundImage: "url(/assest/WORK.jpg)" }}
+        >
+          <div className="absolute inset-0 bg-black opacity-75"></div>
+          <div className="relative z-10 flex flex-col items-center justify-center gap-4 h-full text-center text-white">
+            <h1 className='text-center text-white bg-clip-text text-3xl sm:text-4xl font-bold leading-none tracking-wide text-transparent'>
               Strategic Software Design
             </h1>
-            <p className="text-center text-gray-100 dark:text-gray-400 tracking-wide mt-4">
+            <p className="text-center text-gray-100 dark:text-gray-400 tracking-wide">
               Our team builds solutions that are not only innovative but also strategically crafted.
             </p>
-        </div>
-      </section>
-      
+          </div>
+        </section>
+
 
         {/* About Company */}
         <div className="flex flex-col justify-center items-center">
