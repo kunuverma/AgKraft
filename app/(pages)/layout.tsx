@@ -1,9 +1,12 @@
 "use client";
+
 import { usePathname } from "next/navigation";
+import { useState, useEffect } from "react";
 import "@/app/globals.css";
 import Nav from "../_components/common/Navbar";
-import NavbarHome from "../_components/common/Navbar-home"
+import NavbarHome from "../_components/common/Navbar-home";
 import Footer from "../_components/common/Footer";
+import Welcome from "../_components/common/Welcome";  // Import Welcome screen component
 
 export default function RootLayout({
   children,
@@ -11,16 +14,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
+  const [showWelcome, setShowWelcome] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowWelcome(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
-    <div >
-      {/* Show Nav only on the home page */}
-      {pathname === '/' ? <NavbarHome /> : <Nav />}
-      
+    <div>
+      {pathname === "/" && showWelcome && <Welcome />}
+
+      {!showWelcome && (pathname === "/" ? <NavbarHome /> : <Nav />)}
+
       {/* Render the main page content */}
-      {children}
-      
-      <Footer />
+      {!showWelcome && children}
+
+      {!showWelcome && <Footer />}
     </div>
   );
 }
