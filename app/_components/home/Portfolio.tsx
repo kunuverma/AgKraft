@@ -34,7 +34,7 @@ const Portfolio: React.FC = () => {
         <div className="relative w-full flex flex-col gap-y-6 justify-center items-center bg-[#191A1E] md:mt-[5rem]">
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#f1571050] to-transparent animate-spotlight"></div>
             {/* Projects Header */}
-            <div className="flex flex-col justify-center items-center gap-4 mt-8">
+            <div className="flex flex-col justify-center items-center gap-4 mt-8 relative">
                 <div className='flex items-center gap-2 sm:gap-3'>
                     <span className="text-white text-xl sm:text-2xl lg:text-4xl font-bold leading-none tracking-tighter">
                         Projects We’ve
