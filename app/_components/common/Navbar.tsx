@@ -1,4 +1,4 @@
-import { Montserrat } from '@next/font/google';
+import { Montserrat } from "@next/font/google";
 import { Navitems } from "@/data/navbar";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,8 +8,8 @@ import { Button } from "@/components/ui/button";
 
 // Import Montserrat font
 const montserrat = Montserrat({
-  subsets: ['cyrillic'],
-  weight: ['600'], // Adjust weights as needed
+  subsets: ["cyrillic"],
+  weight: ["600"], // Adjust weights as needed
 });
 
 const Navbar = () => {
@@ -32,12 +32,15 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`sticky top-0 inset-x-0 z-50 w-full transition-all duration-300 ${scrolled
-        ? "bg-[#17181b] shadow-xl p-[1px] border-b-2 border-transparent  gradient-border"
-        : "bg-[#17181b]"
-        }`} // Make navbar transparent if not scrolled
+      className={`sticky top-0 inset-x-0 z-50 w-full transition-all duration-300 ${
+        scrolled
+          ? "bg-[#17181b] shadow-xl p-[1px] border-b-2 border-transparent  gradient-border"
+          : "bg-[#17181b]"
+      }`} // Make navbar transparent if not scrolled
     >
-      <div className={`flex items-center justify-between lg:px-20 px-1 ${montserrat.className}`}>
+      <div
+        className={`flex items-center justify-between lg:px-20 px-1 ${montserrat.className}`}
+      >
         {/* Logo */}
         <div className="font-bold text-2xl text-white">
           <Link href={"/"}>
@@ -54,37 +57,38 @@ const Navbar = () => {
         {/* Navbar Links for Desktop */}
         <div>
           <ul className="hidden md:flex">
-            {Navitems.map((item, idx) => (
-              <li key={idx} className="relative group">
+            {Navitems.map((item, id) => (
+              <li key={id} className="relative group">
                 {item.path ? (
                   <Link
                     href={item.path}
-                    className={`border border-transparent hover:border-gray-300 px-3 py-2 rounded-lg text-base transition-all duration-200 ${scrolled
-                      ? "text-white"
-                      : "text-white"
-                      }`} // Text color changes based on scroll
+                    className={`border border-transparent hover:border-gray-300 px-3 py-2 rounded-lg text-base transition-all duration-200 ${
+                      scrolled ? "text-white" : "text-white"
+                    }`} // Text color changes based on scroll
                   >
                     {item.name}
                   </Link>
                 ) : (
                   <>
                     <span
-                      className={`border border-transparent hover:border-gray-300 px-4 py-2 rounded-lg text-base transition-all duration-200 cursor-pointer ${scrolled
-                        ? "text-white"
-                        : "text-white"
-                        }`}
+                      className={`border border-transparent hover:border-gray-300 px-4 py-2 rounded-lg text-base transition-all duration-200 cursor-pointer ${
+                        scrolled ? "text-white" : "text-white"
+                      }`}
                     >
                       {item.name}
                     </span>
                     {item.submenus && (
                       <div className="absolute hidden group-hover:block lg:bg-gray-100 bg-gray-600 shadow-lg rounded-lg mt-2 w-56 z-50">
-                        {item.submenus.map((submenu, subIdx) => (
+                        {item.submenus.map((submenu, subId) => (
                           <Link
-                            key={subIdx}
+                            as={`/companyservice/${submenu.id}`}
+                            key={subId}
                             href={submenu.path}
                             className="block px-4 py-2 lg:text-[#121C2D] text-gray-300 hover:bg-gray-200 font-helvetica text-sm font-medium"
                           >
-                            {typeof submenu === "object" ? submenu.name : submenu}
+                            {typeof submenu === "object"
+                              ? submenu.name
+                              : submenu}
                           </Link>
                         ))}
                       </div>
@@ -109,9 +113,15 @@ const Navbar = () => {
         {/* Toggle Button for Mobile View */}
         <div className="md:hidden">
           {isMenuOpen ? (
-            <AiOutlineClose className="text-red-500 text-3xl cursor-pointer" onClick={() => setIsMenuOpen(false)} />
+            <AiOutlineClose
+              className="text-red-500 text-3xl cursor-pointer"
+              onClick={() => setIsMenuOpen(false)}
+            />
           ) : (
-            <AiOutlineMenu className="text-white text-3xl cursor-pointer" onClick={() => setIsMenuOpen(true)} />
+            <AiOutlineMenu
+              className="text-white text-3xl cursor-pointer"
+              onClick={() => setIsMenuOpen(true)}
+            />
           )}
         </div>
 
@@ -122,13 +132,19 @@ const Navbar = () => {
               <li key={idx} className="w-full text-center">
                 {item.path ? (
                   <Link href={item.path}>
-                    <span className="block text-white hover:bg-gray-600 px-4 py-2 rounded-md" onClick={() => setIsMenuOpen(false)}>
+                    <span
+                      className="block text-white hover:bg-gray-600 px-4 py-2 rounded-md"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
                       {item.name}
                     </span>
                   </Link>
                 ) : (
                   <>
-                    <span className="block text-white hover:bg-gray-600 px-4 py-2 rounded-md cursor-pointer" onClick={() => toggleSubmenu(idx)}>
+                    <span
+                      className="block text-white hover:bg-gray-600 px-4 py-2 rounded-md cursor-pointer"
+                      onClick={() => toggleSubmenu(idx)}
+                    >
                       {item.name}
                     </span>
                     {activeSubmenu === idx && item.submenus && (
@@ -136,13 +152,22 @@ const Navbar = () => {
                         {item.submenus.map((submenu, subIdx) => (
                           <li key={subIdx}>
                             {typeof submenu === "object" ? (
-                              <Link href={submenu.path}>
-                                <span className="block px-4 py-2 text-white bg-gray-700 hover:bg-gray-600 rounded-md" onClick={() => setIsMenuOpen(false)}>
+                              <Link
+                                href={submenu.path}
+                                as={`/companyservice/${submenu.id}`}
+                              >
+                                <span
+                                  className="block px-4 py-2 text-white bg-gray-700 hover:bg-gray-600 rounded-md"
+                                  onClick={() => setIsMenuOpen(false)}
+                                >
                                   {submenu.name}
                                 </span>
                               </Link>
                             ) : (
-                              <span className="block px-4 py-2 text-white bg-gray-700 hover:bg-gray-600 rounded-md" onClick={() => setIsMenuOpen(false)}>
+                              <span
+                                className="block px-4 py-2 text-white bg-gray-700 hover:bg-gray-600 rounded-md"
+                                onClick={() => setIsMenuOpen(false)}
+                              >
                                 {submenu}
                               </span>
                             )}
