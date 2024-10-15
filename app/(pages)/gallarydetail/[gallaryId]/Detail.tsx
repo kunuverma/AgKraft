@@ -24,6 +24,7 @@ export const Detail = () => {
             individuals from all walks of life to unlock their full
             potential.
           </p>
+          
         </div>
 
         <div>
