@@ -2,7 +2,7 @@ import ShimmerButton from "@/components/magicui/shimmer-button";
 import Image from 'next/image';
 import { CardSpotlight } from "@/components/ui/card-spotlight";
 
-export const About = () => {
+const About = () => {
     return (
         <CardSpotlight className="relative flex flex-col sm:flex-row items-center justify-center mx-5 sm:mx-10 my-5 gap-9 shadow-[0px_0px_5px_0px_#f7fafc] overflow-hidden">
             {/* Spotlight effect */}
@@ -52,3 +52,5 @@ export const About = () => {
         </CardSpotlight>
     );
 }
+
+export default About
