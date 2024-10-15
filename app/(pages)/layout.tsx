@@ -25,7 +25,7 @@ export default function RootLayout({
   }, []);
 
   return (
-    <div>
+    <div className="">
       {pathname === "/" && showWelcome && <Welcome />}
 
       {!showWelcome && (pathname === "/" ? <NavbarHome /> : <Nav />)}
