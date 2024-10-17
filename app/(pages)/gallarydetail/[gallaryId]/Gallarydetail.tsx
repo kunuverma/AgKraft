@@ -3,7 +3,6 @@ import React from 'react';
 import Autoplay from "embla-carousel-autoplay";
 import { Slider } from "@/data/about"; // Ensure this contains the correct project images and data
 import { Card, CardContent } from "@/components/ui/card";
-import { Detail } from "@/app/(pages)/gallarydetail/[gallaryId]/detail";
 import {
   Carousel,
   CarouselContent,
@@ -11,6 +10,7 @@ import {
 } from "@/components/ui/carousel";
 import 'yet-another-react-lightbox/styles.css';
 import Lightbox from 'yet-another-react-lightbox';
+import Detail from './Detail';
 
 export const GalleryDet: React.FC = () => {
   const plugin = React.useRef(

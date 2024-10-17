@@ -5,7 +5,7 @@ interface DetailProps {
   ProjectdataId: string | number; // Allow number as well
 }
 
-export const Detail: React.FC<DetailProps> = ({ ProjectdataId }) => {
+const Detail: React.FC<DetailProps> = ({ ProjectdataId }) => {
   // Convert ProjectdataId to string and trim it
   const currentProjectId = ProjectdataId.toString().trim();
 
@@ -59,3 +59,5 @@ export const Detail: React.FC<DetailProps> = ({ ProjectdataId }) => {
     </div>
   );
 };
+
+export default Detail;

@@ -52,7 +52,7 @@ const OurTeam = () => {
         {/* Team Photos and Info */}
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-center w-[50%] text-white bg-clip-text text-xl sm:text-4xl font-bold leading-none tracking-wide text-transparent">
-            We've got an entire team dedicated to supporting you and your business
+            We have got an entire team dedicated to supporting you and your business
           </h1>
 
           {/* Card Layout */}

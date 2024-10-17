@@ -3,9 +3,8 @@
 import { useParams } from "next/navigation";
 import { Projectdata } from "@/data/project";
 import { GalleryDet } from "@/app/(pages)/gallarydetail/[gallaryId]/Gallarydetail";
-import {Detail} from "@/app/(pages)/gallarydetail/[gallaryId]/detail";
 
-import MehandiDetails from "@/app/(pages)/gallarydetail/components/mehandi";
+// import MehandiDetails from "@/app/(pages)/gallarydetail/components/mehandi";
 
 const GalleryDetail = () => {
     const { gallaryId } = useParams();
