@@ -1,3 +1,5 @@
+"use client"
+
 import { useState } from 'react';
 import React from 'react';
 import Autoplay from "embla-carousel-autoplay";
@@ -10,7 +12,7 @@ import {
 } from "@/components/ui/carousel";
 import 'yet-another-react-lightbox/styles.css';
 import Lightbox from 'yet-another-react-lightbox';
-import Detail from './Detail';
+import Detail from '@/app/(pages)/gallarydetail/[gallaryId]/Detail';
 
 export const GalleryDet: React.FC = () => {
   const plugin = React.useRef(
