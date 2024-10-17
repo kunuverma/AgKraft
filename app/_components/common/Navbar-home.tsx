@@ -32,9 +32,9 @@ const NavbarHome = () => {
 
   return (
     <nav
-      className={`fixed top-0 inset-x-0 z-50 w-full transition-all duration-300 ${
+      className={`absolute top-0 inset-x-0 z-50 w-full ${
         scrolled
-          ? "bg-[#17181b] shadow-xl p-[1px] border-b-2 border-transparent gradient-border"
+          ? "bg-[#17181b] shadow-xl p-[1px] border-b-2 border-transparent gradient-border sticky inset-x-0 z-50 transition-all duration-0"
           : "bg-transparent"
       }`} // Make navbar transparent if not scrolled
     >

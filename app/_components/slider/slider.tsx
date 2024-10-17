@@ -22,7 +22,7 @@ const Slider: React.FC = () => {
     return (
         <>
             {/* <Navbar/> */}
-            <div className="relative w-full h-screen">
+            <div className="relative  w-full h-screen">
                 {/* Loading Spinner */}
                 {isLoading && (
                     <LoadingSpinner/>

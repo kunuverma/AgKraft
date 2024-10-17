@@ -3,6 +3,7 @@
 import { useParams } from "next/navigation";
 import { Navitems } from "@/data/navbar";
 import WebDevelopment from "../components/web-development";
+import OurTeam from "../components/our-team";
 
 const ServiceDetail = () => {
   const { serviceId } = useParams();
@@ -22,6 +23,7 @@ const ServiceDetail = () => {
     return (
       <div className="">
         {companyservices.id === "1" && <WebDevelopment />}
+        {companyservices.id === "10" && <OurTeam />}
       </div>
     );
   } catch (error) {
