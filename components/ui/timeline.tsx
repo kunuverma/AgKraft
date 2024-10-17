@@ -52,7 +52,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           drive business growth and create exceptional online experiences. Our
           expertise spans across diverse industries and platforms, allowing us
           to craft custom websites that are fast, responsive, and optimized for
-          both user experience and performance. Here's how we can help you
+          both user experience and performance. Here how we can help you
           succeed:
         </p>
       </div>
