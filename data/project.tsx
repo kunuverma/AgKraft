@@ -13,7 +13,8 @@ export const Projectdata = [
   {
     id: "1",
     title: "E-commerce Platform",
-    description: "Build a fully functional e-commerce platform with Next.js and Tailwind CSS.",
+    description1: 'IDC India is a top-notch service provider offering cutting-edge digital solutions. The website design showcases a highly responsive layout tailored for showcasing IDC’s unique services to their clients in a visually stunning way.',
+    description2: 'With a focus on user-centered design, this project aims to create seamless online experiences that highlight the company’s commitment to quality and innovation in the tech industry.',
     image: img1,
     tech: "Next.js",
     design: "E-commerce",
@@ -23,17 +24,19 @@ export const Projectdata = [
   {
     id: "2",
     title: "Portfolio Website",
-    description: "Showcase your work with a stunning portfolio site using React.",
+    description1: 'A website dedicated to Mehendi artists, offering a platform to showcase their intricate, beautiful designs. The site allows artists to connect with clients through an engaging and user-friendly interface.',
+    description2: 'The design blends traditional artistry with modern web development practices, providing a platform that captures the beauty of Mehendi while offering a seamless experience for users.',
     image: img2,
     tech: "React",
     design: "Portfolio",
     height: "h-80",
-    lightColor: "radial-gradient(circle, red 0%, orange 100%)",// Unique gradient for each card
+    lightColor: "radial-gradient(circle, red 0%, orange 100%)",
   },
   {
     id: "3",
     title: "Blog Site",
-    description: "Create a blogging platform to share your thoughts and ideas with the world.",
+    description1: 'Developed an AI-powered legal platform called mAI Court, aiming to provide advanced AI-driven legal solutions. The site highlights the latest technology used to simplify complex legal processes.',
+    description2: 'This project involved implementing user-friendly features and an intuitive interface to make legal services accessible to a wider audience, enhancing engagement with innovative tech tools.',
     image: img3,
     tech: "React",
     design: "Blog",
@@ -43,7 +46,8 @@ export const Projectdata = [
   {
     id: "4",
     title: "Social Media App",
-    description: "Develop a social media application with user authentication and real-time updates.",
+    description1: 'Developed an AI-powered legal platform called mAI Court, aiming to provide advanced AI-driven legal solutions. The site highlights the latest technology used to simplify complex legal processes.',
+      description2: 'This project involved implementing user-friendly features and an intuitive interface to make legal services accessible to a wider audience, enhancing engagement with innovative tech tools.',
     image: img4,
     tech: "React",
     design: "Social Media",
@@ -53,7 +57,8 @@ export const Projectdata = [
   {
     id: "5",
     title: "Online Learning Platform",
-    description: "Build an online learning platform to provide courses and tutorials.",
+    description1: 'Developed an AI-powered legal platform called mAI Court, aiming to provide advanced AI-driven legal solutions. The site highlights the latest technology used to simplify complex legal processes.',
+      description2: 'This project involved implementing user-friendly features and an intuitive interface to make legal services accessible to a wider audience, enhancing engagement with innovative tech tools.',
     image: img5,
     tech: "Next.js",
     design: "Ed-tech",
@@ -63,7 +68,8 @@ export const Projectdata = [
   {
     id: "6",
     title: "Fitness Tracker",
-    description: "Create a fitness tracker application to monitor your workouts and diet.",
+    description1: 'Developed an AI-powered legal platform called mAI Court, aiming to provide advanced AI-driven legal solutions. The site highlights the latest technology used to simplify complex legal processes.',
+      description2: 'This project involved implementing user-friendly features and an intuitive interface to make legal services accessible to a wider audience, enhancing engagement with innovative tech tools.',
     image: img6,
     tech: "Java",
     design: "Fitness",
@@ -73,7 +79,8 @@ export const Projectdata = [
   {
     id: "7",
     title: "Recipe Finder",
-    description: "Develop an application to find and save your favorite recipes.",
+    description1: 'Developed an AI-powered legal platform called mAI Court, aiming to provide advanced AI-driven legal solutions. The site highlights the latest technology used to simplify complex legal processes.',
+    description2: 'This project involved implementing user-friendly features and an intuitive interface to make legal services accessible to a wider audience, enhancing engagement with innovative tech tools.',
     image: img7,
     tech: "JavaScript",
     design: "Portfolio",
@@ -83,7 +90,8 @@ export const Projectdata = [
   {
     id: "8",
     title: "Travel Blog",
-    description: "Share your travel experiences and tips with a personal travel blog.",
+    ddescription1: 'Developed an AI-powered legal platform called mAI Court, aiming to provide advanced AI-driven legal solutions. The site highlights the latest technology used to simplify complex legal processes.',
+    description2: 'This project involved implementing user-friendly features and an intuitive interface to make legal services accessible to a wider audience, enhancing engagement with innovative tech tools.',
     image: img8,
     tech: "React",
     design: "Blog",
@@ -93,7 +101,8 @@ export const Projectdata = [
   {
     id: "9",
     title: "Event Management",
-    description: "Create an event management application to organize and promote events.",
+    description1: 'Developed an AI-powered legal platform called mAI Court, aiming to provide advanced AI-driven legal solutions. The site highlights the latest technology used to simplify complex legal processes.',
+      description2: 'This project involved implementing user-friendly features and an intuitive interface to make legal services accessible to a wider audience, enhancing engagement with innovative tech tools.',
     image: img9,
     tech: "React",
     design: "E-commerce",
@@ -103,7 +112,8 @@ export const Projectdata = [
   {
     id: "10",
     title: "Task Manager",
-    description: "Develop a task manager app to help users organize and track their tasks.",
+    description1: 'Developed an AI-powered legal platform called mAI Court, aiming to provide advanced AI-driven legal solutions. The site highlights the latest technology used to simplify complex legal processes.',
+      description2: 'This project involved implementing user-friendly features and an intuitive interface to make legal services accessible to a wider audience, enhancing engagement with innovative tech tools.',
     image: img10,
     tech: "JavaScript",
     design: "Productivity",

@@ -90,7 +90,7 @@ export const ThreeDCardDemo: React.FC = () => {
                 <h3 className="text-white text-xl font-semibold mt-3">
                   {project.title}
                 </h3>
-                <p className="text-gray-300 mt-2">{project.description}</p>
+                <p className="text-gray-300 mt-2">{project.description1}</p>
                 <div className="mt-4 flex justify-between items-center">
                   <span className="text-sm text-gray-300">{project.tech}</span>
                   <span className="text-sm text-gray-300">{project.design}</span>
