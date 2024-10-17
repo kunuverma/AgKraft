@@ -26,7 +26,7 @@ const containerVariants = {
 //   hover: { rotate: 10, transition: { type: "spring", stiffness: 200, damping: 10 } },
 // };
 
-const Ourteam = () => {
+const OurTeam = () => {
   return (
     <div className="bg-[#191A1E] relative w-full min-h-screen flex justify-center overflow-hidden">
       {/* Spotlight */}
@@ -112,4 +112,4 @@ const Ourteam = () => {
   );
 };
 
-export default Ourteam;
+export default OurTeam;

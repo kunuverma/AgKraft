@@ -57,7 +57,7 @@ export const Navitems = [
   {
     name: "Company",
     submenus: [
-      { id: "10", name: "Our Team", path: "/teamservices/[id]" },
+      { id: "10", name: "Our Team", path: "/companyservice/[id]" },
       { id: "11", name: "Careers", path: "/Career" },
       { id: "12", name: "Blog", path: "/Blog" },
     ],
