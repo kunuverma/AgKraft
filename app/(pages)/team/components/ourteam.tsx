@@ -16,15 +16,15 @@ const containerVariants = {
   },
 };
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeInOut" } },
-  hover: { scale: 1.1, transition: { type: "spring", stiffness: 260, damping: 20 } },
-};
+// const cardVariants = {
+//   hidden: { opacity: 0, y: 50 },
+//   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeInOut" } },
+//   hover: { scale: 1.1, transition: { type: "spring", stiffness: 260, damping: 20 } },
+// };
 
-const imageVariants = {
-  hover: { rotate: 10, transition: { type: "spring", stiffness: 200, damping: 10 } },
-};
+// const imageVariants = {
+//   hover: { rotate: 10, transition: { type: "spring", stiffness: 200, damping: 10 } },
+// };
 
 const Ourteam = () => {
   return (
@@ -63,11 +63,11 @@ const Ourteam = () => {
             animate="visible"
           >
             {teamMembers.slice(0, 3).map((member) => (
-              <motion.div
+              <div
                 key={member.id}
                 className="flex p-6 rounded-lg shadow-lg w-[80%] justify-center items-center  hover:bg-[#343746] transition-colors duration-300"
-                variants={cardVariants}
-                whileHover="hover"
+                
+                
               >
                 {/* Info Section */}
                 <div className="ml-6 flex flex-col justify-center">
@@ -103,7 +103,7 @@ const Ourteam = () => {
                     className="w-[10rem] h-[10rem] rounded-full object-cover"
                   />
                 </div>
-              </motion.div>
+              </div>
             ))}
           </motion.div>
         </div>

@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import React from 'react';
 import Autoplay from "embla-carousel-autoplay";
-import { Slider } from "@/data/about";
+import { Slider } from "@/data/about"; // Ensure this contains the correct project images and data
 import { Card, CardContent } from "@/components/ui/card";
-import { Detail } from "@/app/(pages)/gallarydetail/[gallaryId]/Detail"
-
+import { Detail } from "@/app/(pages)/gallarydetail/[gallaryId]/detail";
 import {
   Carousel,
   CarouselContent,
   CarouselItem
 } from "@/components/ui/carousel";
-import 'yet-another-react-lightbox/styles.css'; // Import lightbox styles
-import Lightbox from 'yet-another-react-lightbox'; // Import Lightbox component
+import 'yet-another-react-lightbox/styles.css';
+import Lightbox from 'yet-another-react-lightbox';
 
 export const GalleryDet: React.FC = () => {
   const plugin = React.useRef(
@@ -25,9 +25,12 @@ export const GalleryDet: React.FC = () => {
     setOpen(true);
   };
 
+  // Derive the ProjectdataId based on the currently clicked photo index
+  const currentProjectDataId = Slider[photoIndex]?.id || ''; 
+
   return (
     <div className=" bg-[#191A1E] relative">
-      <div className="absolute  inset-0 bg-gradient-to-r from-transparent via-[#1f1c2c] to-transparent animate-spotlight z-0"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#1f1c2c] to-transparent animate-spotlight z-0"></div>
       <div className='z-20'>
         <div>
           <section
@@ -70,8 +73,6 @@ export const GalleryDet: React.FC = () => {
           </Carousel>
         </div>
 
-
-
         {/* Lightbox for zoom and navigation */}
         {open && (
           <Lightbox
@@ -79,24 +80,16 @@ export const GalleryDet: React.FC = () => {
             close={() => setOpen(false)}
             index={photoIndex}
             slides={Slider.map(item => ({ src: item.image.src }))}
-          // onPrev={() => setPhotoIndex((photoIndex + Slider.length - 1) % Slider.length)}
-          // onNext={() => setPhotoIndex((photoIndex + 1) % Slider.length)}
           />
         )}
 
-
+        {/* Pass the correct ProjectdataId to the Detail component */}
         <div className='relative'>
-          <Detail />
+          <Detail ProjectdataId={currentProjectDataId} /> {/* Pass the correct ProjectdataId */}
         </div>
       </div>
 
-
-
-
       {/* full info how website create */}
-
-
-
     </div>
   );
 };

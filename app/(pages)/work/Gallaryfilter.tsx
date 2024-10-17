@@ -98,7 +98,7 @@ const FilterPage = () => {
               {data.title}
             </h2>
             <p className="text-neutral-500 text-sm mt-2 dark:text-neutral-300 text-center">
-              {data.description}
+              {data.description1}
             </p>
             <Image
               src={data.image}

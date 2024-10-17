@@ -1,40 +1,61 @@
-import detail from "@/public/assest/ecom.jpeg";
+import { Projectdata } from "@/data/project";
+import React from 'react';
 
-export const Detail = () => {
+interface DetailProps {
+  ProjectdataId: string | number; // Allow number as well
+}
+
+export const Detail: React.FC<DetailProps> = ({ ProjectdataId }) => {
+  // Convert ProjectdataId to string and trim it
+  const currentProjectId = ProjectdataId.toString().trim();
+
+  // Log to check the passed ProjectdataId
+  console.log("Passed ProjectdataId:", currentProjectId);
+
+  // Log all the available project IDs to verify
+  const availableIds = Projectdata.map(project => project.id.toString());
+  console.log("Available Project IDs:", availableIds);
+
+  // Find the specific project data based on id
+  const slideDetail = Projectdata.find((project) => {
+    const projectId = project.id.toString().trim();
+    console.log(`Comparing project ID: ${projectId} with ProjectdataId: ${currentProjectId}`);
+    return projectId === currentProjectId;
+  });
+
+  // Handle case where slideDetail might be undefined
+  if (!slideDetail) {
+    return <div>Project not found</div>;
+  }
+
   return (
-    <div className="mt-10 px-14 ">
+    <div className="mt-10 px-14">
       <div className="flex flex-col items-center gap-10 lg:flex-row justify-between">
         <div className="lg:my-24 mt-5 flex lg:w-[50%] flex-col gap-10">
-          <h1 className="bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCB045] bg-clip-text text-4xl font-semibold text-transparent lg:w-[70%] ">
-            E-commerce Design
+          {/* Title */}
+          <h1 className="bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCB045] bg-clip-text text-4xl font-semibold text-transparent lg:w-[70%]">
+            {slideDetail.title}
           </h1>
+
+          {/* Description 1 */}
           <p className="text-base font-medium text-gray-300 lg:w-[95%]">
-            Our e-learning platform was born out of a shared vision and
-            passion for transforming education. It all began with a group of
-            educators, technologists, and lifelong learners who recognized
-            the need for accessible, flexible, and high-quality learning
-            opportunities in a rapidly evolving digital world.
+            {slideDetail.description1}
           </p>
+
+          {/* Description 2 */}
           <p className="text-base font-medium text-gray-300 lg:w-[95%]">
-            As experienced educators ourselves, we witnessed firsthand the
-            limitations and challenges of traditional education systems. We
-            believed that education should not be confined to the walls of a
-            classroom or restricted by geographical boundaries. We
-            envisioned a platform that could bridge these gaps and empower
-            individuals from all walks of life to unlock their full
-            potential.
+            {slideDetail.description2}
           </p>
-          
         </div>
 
+        {/* Image */}
         <div>
           <img
-            src={detail.src}
-            alt=""
-            className="shadow-[0px_0px_20px_3px_#a0aec0] rounded-xl lg:w-[40rem] w-[40]"
-          />
+            src={slideDetail.image.src}
+            alt={slideDetail.title}
+            className="shadow-[0px_0px_20px_3px_#a0aec0] rounded-xl lg:w-[40rem] w-[40]"/>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
