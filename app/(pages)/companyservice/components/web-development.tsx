@@ -8,8 +8,7 @@ import React from "react";
 import { Timeline } from "@/components/ui/timeline";
 import { timelineData } from "@/data/company-service";
 import { pageContent } from "@/data/company-service";
-import { Tabs } from "@/components/ui/tabs";
-import TabsDemo from "./tabs";
+// import { TabsDemo } from "./tabs";
 
 const WebDevelopment = () => {
   return (
@@ -84,9 +83,9 @@ const WebDevelopment = () => {
         </div>
 
         {/* CTA section */}
-        <div className="w-full">
-          <TabsDemo />
-        </div>
+        {/* <div className="w-full">
+          <TabsDemo/>
+        </div> */}
       </div>
     </div>
   );

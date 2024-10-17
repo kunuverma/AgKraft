@@ -1,75 +1,38 @@
-"use client";
+import React from "react";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-import Image from "next/image";
-import { Tabs } from "@/components/ui/tabs";
+// Import the card data array
+import { cardsData } from "@/data/company-service";
 
-const TabsDemo = () => {
-  const tabs = [
-    {
-      title: "Product",
-      value: "product",
-      content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
-          <p>Product Tab</p>
-          <DummyContent />
-        </div>
-      ),
-    },
-    {
-      title: "Services",
-      value: "services",
-      content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
-          <p>Services tab</p>
-          <DummyContent />
-        </div>
-      ),
-    },
-    {
-      title: "Playground",
-      value: "playground",
-      content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
-          <p>Playground tab</p>
-          <DummyContent />
-        </div>
-      ),
-    },
-    {
-      title: "Content",
-      value: "content",
-      content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
-          <p>Content tab</p>
-          <DummyContent />
-        </div>
-      ),
-    },
-    {
-      title: "Random",
-      value: "random",
-      content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
-          <p>Random tab</p>
-          <DummyContent />
-        </div>
-      ),
-    },
-  ];
-
+export function TabsDemo() {
   return (
-    <div className="h-[20rem] bg-red-900 md:h-[40rem] [perspective:1000px] relative flex flex-col justify-center items-center ">
-      <Tabs tabs={tabs} />
-    </div>
+    <Tabs defaultValue="discovery" className="w-full">
+      {/* Render the tab triggers dynamically */}
+      <TabsList className="grid w-full grid-cols-5">
+        {cardsData.map((card) => (
+          <TabsTrigger key={card.value} value={card.value}>
+            {card.title}
+          </TabsTrigger>
+        ))}
+      </TabsList>
+
+      {/* Render the card content dynamically based on selected tab */}
+      {cardsData.map((card) => (
+        <TabsContent key={card.value} value={card.value}>
+          <Card>
+            <CardHeader>
+              <CardTitle>{card.title}</CardTitle>
+              <CardDescription>{card.description}</CardDescription>
+            </CardHeader>
+          </Card>
+        </TabsContent>
+      ))}
+    </Tabs>
   );
 }
-
-export default TabsDemo;
-
-const DummyContent = () => {
-  return (
-    <div className="object-left-top h-[60%]  md:h-[90%] absolute -bottom-10 inset-x-0 w-[90%] rounded-xl mx-auto">
-      <h1>dsijcdsijcds</h1>
-    </div>
-  );
-};

@@ -181,3 +181,32 @@ export const tabs = [
   },
 ];
 
+export const cardsData = [
+    {
+      value: "discovery",
+      title: "Discovery",
+      description: "In the discovery phase, we research the client's requirements, analyze the competition, and define the project goals.",
+    },
+    {
+      value: "design",
+      title: "Design",
+      description: "An intricate UI/UX design is then created, including the software architecture, database structure, and user interface.",
+    },
+    {
+      value: "development",
+      title: "Development",
+      description: "The development phase involves the coding and creation of the software based on the design and requirements.",
+    },
+    {
+      value: "testing",
+      title: "Testing & QA",
+      description: "In this phase, we perform rigorous testing to ensure the software is free of bugs and meets all requirements.",
+    },
+    {
+      value: "deployment",
+      title: "Deployment & Support",
+      description: "In the final phase, the software is deployed and ongoing support is provided to ensure its smooth operation.",
+    },
+  ];
+  
+
